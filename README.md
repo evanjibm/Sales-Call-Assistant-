@@ -15,15 +15,16 @@ git commit -m "feat: add XYZ feature"
 git push origin main
 ```
 
+### Pull changes
+```bash
+# Pull latest from GitHub
+git pull origin main
+```
+
 ### Create a version tag
 ```bash
 git tag v1.0.0
 git push origin v1.0.0
-```
-
-### Pull latest from GitHub
-```bash
-git pull origin main
 ```
 
 ### Create a feature branch
