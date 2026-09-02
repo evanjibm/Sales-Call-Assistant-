@@ -1,2 +1,2 @@
 # Sales-Call-Assistant-
-Intern project w/ Rakhan
+Intern project w/ Rakann
