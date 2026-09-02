@@ -21,6 +21,11 @@ git tag v1.0.0
 git push origin v1.0.0
 ```
 
+### Pull latest from GitHub
+```bash
+git pull origin main
+```
+
 ### Create a feature branch
 ```bash
 git checkout -b feature/my-new-thing
