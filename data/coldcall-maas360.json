@@ -1,0 +1,2215 @@
+{
+  "$schema": "./coldcall.schema.md",
+  "meta": {
+    "id": "maas360",
+    "version": "2026-10-05",
+    "reviewed": true,
+    "source": "Migrated from the old MaaS360 Cold Call Cockpit (reference/maas360-old-cockpit.html). Old wording is kept verbatim; the hardcoded rep name -> {you} ([Your Name]) and hardcoded city -> {city} ([Your City]).",
+    "markup": "{token} fills from setup inputs/data · **bold** · [[delivery cue]] · ((if-they-say branch)) · [Literal] = fill by hand · \\n = line break",
+    "conventions": [
+      "status: \"DRAFT: review\" on an object = the whole object is new draft content",
+      "draft: [field names] on an object = those fields are new draft content",
+      "todo: \"TODO: verify approved for external use\" = old content that must be cleared before external use",
+      "approved: proof or account lists cleared for external use"
+    ],
+    "review": {
+      "approvedBy": "evanji",
+      "date": "2026-10-05",
+      "note": "All DRAFT and TODO items approved, including brief-sourced proof (ADG, Vegas, Hacienda) and the named sector accounts."
+    }
+  },
+  "product": {
+    "name": "MaaS360",
+    "full": "IBM MaaS360",
+    "eyebrow": "IBM MaaS360 · Live-Call Cockpit",
+    "title": "Cold Call Cockpit"
+  },
+  "goal": {
+    "line": "**One job:** start a conversation, uncover a challenge, and earn a 10 to 15 minute discovery meeting. Flip **Live Mode** on for the call, off to study the full guide.",
+    "tips": [
+      {
+        "title": "Your goal is not to pitch MaaS360",
+        "text": "Get them talking, learn one useful thing, create a little curiosity, and earn 10-15 minutes on the calendar."
+      },
+      {
+        "title": "One question, one insight, one ask",
+        "text": "Ask a simple question, react, share a short pattern you're seeing, then ask for a quick meeting. Don't stack five discovery questions."
+      },
+      {
+        "title": "Sound like you're calling a coworker",
+        "text": "Short sentences. Normal words. Calm pace. If a line is hard to say out loud, rewrite it until it sounds like you."
+      }
+    ]
+  },
+  "liveHint": "Live Mode on — showing only **Engage**, **Discover**, **Explore**, **Secure**, and **Voicemail**. Press **L** or the button to exit.",
+  "objectives": {
+    "prep": "Walk into the dial with one real reason to call: hiring, growth, new locations, remote work, compliance, or device-heavy teams.",
+    "engage": "Earn the next 30 seconds and give them one reason to care about how they manage and secure their devices.",
+    "discover": "Find out whether the device problem is real for them, what it costs, and who owns it. One question, then listen.",
+    "explore": "Agree fast, find out what is behind the pushback, and ask one more question. Never fight it.",
+    "secure": "Leave with 10-15 minutes on the calendar, or a callback, a referral, or a follow-up date. Never end on \"let me know\"."
+  },
+  "outcomes": [
+    {
+      "id": "book",
+      "icon": "✅",
+      "label": "Meeting Booked"
+    },
+    {
+      "id": "callback",
+      "icon": "📅",
+      "label": "Call Back"
+    },
+    {
+      "id": "referral",
+      "icon": "👤",
+      "label": "Referral"
+    },
+    {
+      "id": "follow",
+      "icon": "📧",
+      "label": "Follow Up"
+    },
+    {
+      "id": "closed",
+      "icon": "❌",
+      "label": "Closed"
+    }
+  ],
+  "value": "MaaS360 helps companies manage and secure phones, tablets, laptops, and BYOD from one place, while cutting the manual work for IT.",
+  "valueHint": "give one line, then go straight back to the meeting ask",
+  "valueVariants": [
+    {
+      "label": "Plain English",
+      "line": "Manage and secure every device from one place."
+    },
+    {
+      "label": "IT version",
+      "line": "Cuts manual work around setup, apps, policies, and support."
+    },
+    {
+      "label": "Security version",
+      "line": "Protects work data across mobile, BYOD, and endpoints."
+    },
+    {
+      "label": "Curiosity line",
+      "line": "\"Most teams aren't starting from zero, they just want a cleaner way to manage devices and less support work.\""
+    }
+  ],
+  "topic": "device management and mobile security",
+  "owns": "device management or mobile security",
+  "ownerTeam": "IT or security",
+  "focus": [
+    "reducing manual IT work",
+    "reducing device risk"
+  ],
+  "costs": "IT hours on setup and tickets, security risk, or users waiting on IT",
+  "incumbents": [
+    "Intune",
+    "Jamf",
+    "Workspace ONE"
+  ],
+  "triggers": [
+    "is hiring",
+    "is growing fast",
+    "is opening new locations",
+    "has a remote or hybrid workforce",
+    "is facing new compliance requirements",
+    "runs device-heavy teams"
+  ],
+  "personas": [
+    {
+      "id": "it",
+      "role": "IT Director / EUC",
+      "plural": "IT directors",
+      "valueVariant": "IT version",
+      "openingTab": "it",
+      "hypothesis": "setup, apps, policies, and support quietly eating IT time",
+      "peer": "trying to cut the manual work around setup and support tickets"
+    },
+    {
+      "id": "security",
+      "role": "Security",
+      "plural": "security leaders",
+      "valueVariant": "Security version",
+      "openingTab": "security",
+      "hypothesis": "mobile devices and BYOD turning into more of a security conversation",
+      "peer": "trying to keep work data protected across mobile and BYOD"
+    },
+    {
+      "id": "exec",
+      "role": "Executive / CIO",
+      "plural": "IT leaders",
+      "valueVariant": "Plain English",
+      "openingTab": "exec",
+      "hypothesis": "device risk and manual IT work competing for the same team",
+      "peer": "looking to reduce device risk and take manual work off IT"
+    },
+    {
+      "id": "ops",
+      "role": "Ops / Infrastructure / Help Desk",
+      "plural": "help desk and infrastructure leads",
+      "valueVariant": "IT version",
+      "hypothesis": "the same device tickets coming back, with updates going manual for people off-desk",
+      "peer": "trying to stop chasing the same device tickets twice"
+    },
+    {
+      "id": "unknown",
+      "role": "Not sure who owns it",
+      "plural": "teams",
+      "valueVariant": "Curiosity line",
+      "openingTab": "unknown",
+      "hypothesis": "device management and mobile security living with someone else",
+      "peer": "routing device questions to the right owner"
+    }
+  ],
+  "industries": [
+    {
+      "id": "government",
+      "label": "Government",
+      "type": "agencies & public sector",
+      "fits": {
+        "text": "Fits: agencies & public sector — **City of New Orleans, Sedgwick County, Oakland**",
+        "accounts": [
+          "City of New Orleans",
+          "Sedgwick County",
+          "Oakland"
+        ],
+        "approved": "Approved for external use by evanji, 2026-10-05"
+      },
+      "hookLabel": "Government",
+      "hook": "\"More work, same staff; device work eats hours.\"",
+      "nums": "45 min → 5 · ~$36K/yr",
+      "scripts": {
+        "proofdefault": {
+          "tag": "Government",
+          "stat": "**Researched:** more work, same staff, secure + compliant devices. **Proof:** setup 45 min → 5, real IT hours back.",
+          "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. You're probably being asked to do more with the same headcount, all while keeping devices secure and compliant. We just helped a government IT team cut setup from about 45 minutes to 5 and hand real hours back. Is that running smooth for you, or is device work still eating time?\"",
+          "disc": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "curi": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "ask": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"You're probably being asked to do more with the same headcount, all while keeping devices secure and compliant.\" [[your researched read]] \"We just helped a government IT team cut setup from about 45 minutes to 5 and hand real hours back.\" [[proof — then one question]] \"Is that running smooth for you, or is device work still eating time?\" [[stop talking]]",
+          "spDisc": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]",
+          "spCuri": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]",
+          "spAsk": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]",
+          "proofRefs": [
+            "setup-45-5"
+          ]
+        },
+        "proofconsult": {
+          "tag": "Government",
+          "stat": "**Personalized:** more work, same staff, secure/compliant devices. **Proof:** government setup 45 min to 5, time back to IT.",
+          "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into **{company}** before I called, and honestly your team is probably being asked to do more with the same staff while still keeping devices secure and compliant. We are setting aside time for a small number of government teams to compare how your team is handling device setup, security, and compliance today, and see where there may be room to give IT some time back. Worth 15 minutes to see if there is anything there?\"",
+          "disc": "\"If it is useful, great. If not, you will know pretty quickly. No big pitch.\"",
+          "curi": "\"Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "ask": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded and human]] \"I was looking into **{company}** before I called, and honestly your team is probably being asked to do more with the same staff while still keeping devices secure and compliant.\" [[make it feel researched]] \"We are setting aside time for a small number of government teams to compare how your team is handling device setup, security, and compliance today, and see where there may be room to give IT some time back.\" [[clear value]] \"Worth 15 minutes to see if there is anything there?\" [[stop]]",
+          "spDisc": "\"If it is useful, great.\" [[make it easy]] \"If not, you will know pretty quickly. No big pitch.\" [[lower the pressure]]",
+          "spCuri": "\"Worst case, you get a couple ideas.\" [[simple]] \"Best case, we find something worth fixing. Either way, it is 15 minutes.\" [[reframe the risk]]",
+          "spAsk": "\"Worth a quick look next week?\" [[ask clean]] \"Mornings or afternoons easier for you?\" [[lock the time]]",
+          "proofRefs": [
+            "setup-45-5"
+          ]
+        },
+        "proof": {
+          "tag": "Government",
+          "stat": "**Noticed:** more work, same staff; device work eats hours. **Proof:** 45 min → 5, ~50 hrs/mo, ~$36K/yr.",
+          "line": "\"Hey **{name}**? **{you}** with IBM. I was actually looking at **{company}** before I called. It seems like your team is probably being asked to do more with the same staff, and device setup and support can quietly eat a lot of those hours. How close am I there?\"",
+          "disc": "\"Yeah, that is usually how it goes. Is the bigger drag issuing and setting up the devices, keeping them secure, or proving compliance when someone asks?\"",
+          "curi": "\"That is exactly why I asked. We recently helped a government IT team move setup from about **45 minutes to 5** and hand back roughly **50 IT hours a month**, which is around **$36K a year** on 100 devices.\"",
+          "ask": "\"Might be worth **10 or 15 minutes** to see if there is a way to get some of those hours back for your team. If it is not relevant, you can tell me and we are done. Open to it?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. Full honesty, I was actually looking at **{company}** before I called, so this is not totally random.\" [[easy, not pitchy]] \"It seems like your team is probably being asked to do more with the same staff, and device setup and support can quietly eat a lot of those hours.\" [[then the magic line]] \"How close am I there?\" [[stop talking, let them react]]",
+          "spDisc": "\"Yeah, that is usually how it goes.\" [[react to what they said first]] \"Is the bigger drag issuing and setting up the devices, keeping them secure, or proving compliance when someone asks?\" [[one dig, then listen]]",
+          "spCuri": "\"That is exactly why I asked.\" [[their answer earned this]] \"We recently helped a government IT team move setup from about **45 minutes to 5** and hand back roughly **50 IT hours a month**, which is around **$36K a year** on 100 devices.\" [[proof is now a response, not a pitch]]",
+          "spAsk": "\"Might be worth **10 or 15 minutes** to see if there is a way to get some of those hours back for your team.\" [[low pressure]] \"If it is not relevant, you can tell me and we are done.\" [[give the out]] \"Open to it?\" [[stop]]",
+          "proofRefs": [
+            "setup-45-5",
+            "cost-36k"
+          ]
+        }
+      },
+      "email": "**Subject:** handing some IT hours back to your team\n\nHey {name},\n\n{you} with IBM here. I tried you by phone, but figured email might be easier.\n\nI was looking at your agency before I reached out. Public-sector IT teams are usually asked to do more with the same staff. We recently helped a government team move setup from about **45 minutes to 5** and hand back roughly **50 IT hours a month**.\n\nI am not assuming this is a fit. I just noticed enough that I thought it was worth a quick note. Worth **10-15 minutes** to see if there is anything useful?\n\n{you}\n[Title] | IBM MaaS360\n{phone} | [Email]",
+      "emailProofRefs": [
+        "setup-45-5"
+      ],
+      "proofRefs": [
+        "setup-45-5",
+        "cost-36k"
+      ]
+    },
+    {
+      "id": "school",
+      "label": "Education",
+      "type": "universities & districts",
+      "fits": {
+        "text": "Fits: universities & districts — **UNL, LSU, Tulane, Creighton, Lincoln Public Schools**",
+        "accounts": [
+          "UNL",
+          "LSU",
+          "Tulane",
+          "Creighton",
+          "Lincoln Public Schools"
+        ],
+        "approved": "Approved for external use by evanji, 2026-10-05"
+      },
+      "hookLabel": "Education",
+      "hook": "\"Devices into students/staff hands fast, especially start of year.\"",
+      "nums": "less setup · fewer tickets",
+      "scripts": {
+        "proofdefault": {
+          "tag": "Education",
+          "stat": "**Researched:** student/staff device rollout, start-of-year crunch. **Proof:** simpler setup, fewer tickets.",
+          "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. Getting devices into students' and staff hands fast, especially at the start of the year, is probably a real lift. We've helped schools and districts simplify setup and cut the tickets that pile on IT. Is that dialed in for you, or does it still get messy in the busy stretches?\"",
+          "disc": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "curi": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "ask": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"Getting devices into students' and staff hands fast, especially at the start of the year, is probably a real lift.\" [[your researched read]] \"We've helped schools and districts simplify setup and cut the tickets that pile on IT.\" [[proof — then one question]] \"Is that dialed in for you, or does it still get messy in the busy stretches?\" [[stop talking]]",
+          "spDisc": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]",
+          "spCuri": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]",
+          "spAsk": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]"
+        },
+        "proofconsult": {
+          "tag": "Education",
+          "stat": "**Personalized:** student/staff devices and start-of-year setup. **Proof:** simplified setup and fewer support tickets.",
+          "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into **{company}** before I called, and honestly getting devices into students and staff hands quickly, especially around the start of the year, is probably a real lift. We are setting aside time for a small number of education teams to compare how you are handling student, staff, and shared devices today, and see where there may be room to cut setup time and support load. Worth 15 minutes to see if there is anything there?\"",
+          "disc": "\"If it is useful, great. If not, you will know pretty quickly. No big pitch.\"",
+          "curi": "\"Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "ask": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded and human]] \"I was looking into **{company}** before I called, and honestly getting devices into students and staff hands quickly, especially around the start of the year, is probably a real lift.\" [[make it feel researched]] \"We are setting aside time for a small number of education teams to compare how you are handling student, staff, and shared devices today, and see where there may be room to cut setup time and support load.\" [[clear value]] \"Worth 15 minutes to see if there is anything there?\" [[stop]]",
+          "spDisc": "\"If it is useful, great.\" [[make it easy]] \"If not, you will know pretty quickly. No big pitch.\" [[lower the pressure]]",
+          "spCuri": "\"Worst case, you get a couple ideas.\" [[simple]] \"Best case, we find something worth fixing. Either way, it is 15 minutes.\" [[reframe the risk]]",
+          "spAsk": "\"Worth a quick look next week?\" [[ask clean]] \"Mornings or afternoons easier for you?\" [[lock the time]]"
+        },
+        "proof": {
+          "tag": "Education",
+          "stat": "**Noticed:** getting devices to students/staff fast, especially start of year. **Proof:** less setup time, fewer support tickets.",
+          "line": "\"Hey **{name}**? **{you}** with IBM. I was actually looking at **{company}** before I called. It looks like getting devices into students and staff hands quickly, especially around the start of the year, could be a pretty big lift for your team. How close am I there?\"",
+          "disc": "\"Yeah, I figured that might be the case. Is the tougher part the day-one setup and imaging, keeping them secure, or the lost-device and reset tickets that pile up?\"",
+          "curi": "\"That is exactly why I asked. We have helped districts and universities cut that setup time way down and take a real chunk of those support tickets off IT.\"",
+          "ask": "\"Might be worth **10 or 15 minutes** to see if there is a way to make the next device cycle easier. If it is not relevant, you can tell me and we are done. Open to it?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. Full honesty, I was actually looking at **{company}** before I called, so this is not totally random.\" [[easy, not pitchy]] \"It looks like getting devices into students and staff hands quickly, especially around the start of the year, could be a pretty big lift for your team.\" [[then the magic line]] \"How close am I there?\" [[stop talking, let them react]]",
+          "spDisc": "\"Yeah, I figured that might be the case.\" [[react to what they said first]] \"Is the tougher part the day-one setup and imaging, keeping them secure, or the lost-device and reset tickets that pile up?\" [[one dig, then listen]]",
+          "spCuri": "\"That is exactly why I asked.\" [[their answer earned this]] \"We have helped districts and universities cut that setup time way down and take a real chunk of those support tickets off IT.\" [[proof is now a response, not a pitch]]",
+          "spAsk": "\"Might be worth **10 or 15 minutes** to see if there is a way to make the next device cycle easier.\" [[low pressure]] \"If it is not relevant, you can tell me and we are done.\" [[give the out]] \"Open to it?\" [[stop]]"
+        }
+      },
+      "email": "**Subject:** a thought on your student and staff devices\n\nHey {name},\n\n{you} with IBM here. I tried you by phone, but figured email might be easier.\n\nI was looking at your organization before I reached out. Getting devices into students and staff hands quickly, especially at the start of the year, looks like a real lift. We have helped districts and universities cut that setup time and take support tickets off IT.\n\nI am not assuming this is a fit. I just noticed enough that I thought it was worth a quick note. Worth **10-15 minutes** to see if there is anything useful?\n\n{you}\n[Title] | IBM MaaS360\n{phone} | [Email]",
+      "emailProofRefs": []
+    },
+    {
+      "id": "finance",
+      "label": "Finance / Banking",
+      "type": "banks, insurance, lending",
+      "fits": {
+        "text": "Fits: banks, insurance, lending — **Arvest, BancFirst, Tinker FCU, Lockton, LoanDepot, QBE/NAU**",
+        "accounts": [
+          "Arvest",
+          "BancFirst",
+          "Tinker FCU",
+          "Lockton",
+          "LoanDepot",
+          "QBE/NAU"
+        ],
+        "approved": "Approved for external use by evanji, 2026-10-05"
+      },
+      "hookLabel": "Finance / Banking",
+      "hook": "\"Manage devices across branches + remote staff; prove compliance without the scramble.\"",
+      "nums": "audit-ready · less exam scramble",
+      "scripts": {
+        "proofdefault": {
+          "tag": "Finance / Banking",
+          "stat": "**Researched:** branches, remote staff, compliance scrutiny. **Proof:** audit-ready with less manual work.",
+          "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. Between branches, remote staff, and compliance, device security is probably a bigger lift than it should be. We've helped banks and insurers stay audit-ready while cutting the manual work behind it. Is that buttoned up for you, or does proving it still create work?\"",
+          "disc": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "curi": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "ask": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"Between branches, remote staff, and compliance, device security is probably a bigger lift than it should be.\" [[your researched read]] \"We've helped banks and insurers stay audit-ready while cutting the manual work behind it.\" [[proof — then one question]] \"Is that buttoned up for you, or does proving it still create work?\" [[stop talking]]",
+          "spDisc": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]",
+          "spCuri": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]",
+          "spAsk": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]"
+        },
+        "proofconsult": {
+          "tag": "Finance / Banking",
+          "stat": "**Personalized:** branches, remote staff, compliance scrutiny. **Proof:** audit-ready device security with less manual work.",
+          "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into **{company}** before I called, and honestly between branches, remote employees, and compliance expectations, device security is probably a bigger lift than it should be. We are setting aside time for a small number of finance / banking teams to compare how you are securing and proving device compliance today, and see where there may be room to cut manual audit prep and support work. Worth 15 minutes to see if there is anything there?\"",
+          "disc": "\"If it is useful, great. If not, you will know pretty quickly. No big pitch.\"",
+          "curi": "\"Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "ask": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded and human]] \"I was looking into **{company}** before I called, and honestly between branches, remote employees, and compliance expectations, device security is probably a bigger lift than it should be.\" [[make it feel researched]] \"We are setting aside time for a small number of finance / banking teams to compare how you are securing and proving device compliance today, and see where there may be room to cut manual audit prep and support work.\" [[clear value]] \"Worth 15 minutes to see if there is anything there?\" [[stop]]",
+          "spDisc": "\"If it is useful, great.\" [[make it easy]] \"If not, you will know pretty quickly. No big pitch.\" [[lower the pressure]]",
+          "spCuri": "\"Worst case, you get a couple ideas.\" [[simple]] \"Best case, we find something worth fixing. Either way, it is 15 minutes.\" [[reframe the risk]]",
+          "spAsk": "\"Worth a quick look next week?\" [[ask clean]] \"Mornings or afternoons easier for you?\" [[lock the time]]"
+        },
+        "proof": {
+          "tag": "Finance / Banking",
+          "stat": "**Noticed:** branches + remote staff + exam scrutiny = heavy security lift. **Proof:** locked down, audit-ready, less exam-prep scramble.",
+          "line": "\"Hey **{name}**? **{you}** with IBM. I was actually looking at **{company}** before I called. My guess is that between all the branches, remote staff, and everything examiners expect, keeping devices secure and provable is a bigger lift than it probably should be. How close am I there?\"",
+          "disc": "\"Yeah, that is usually the reality. Is the bigger pressure locking down all those devices and BYOD, or being able to actually prove it when audit or an examiner comes around?\"",
+          "curi": "\"That is exactly why I asked. We have helped banks and insurance teams keep devices locked down and audit-ready while cutting the manual work it takes to prove it, so exam prep is not a fire drill.\"",
+          "ask": "\"Might be worth **10 or 15 minutes** to compare what I noticed with how you are handling it today. If it is not relevant, you can tell me and we are done. Open to it?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. Full honesty, I was actually looking at **{company}** before I called, so this is not totally random.\" [[easy, not pitchy]] \"My guess is that between all the branches, remote staff, and everything examiners expect, keeping devices secure and provable is a bigger lift than it probably should be.\" [[then the magic line]] \"How close am I there?\" [[stop talking, let them react]]",
+          "spDisc": "\"Yeah, that is usually the reality.\" [[react to what they said first]] \"Is the bigger pressure locking down all those devices and BYOD, or being able to actually prove it when audit or an examiner comes around?\" [[one dig, then listen]]",
+          "spCuri": "\"That is exactly why I asked.\" [[their answer earned this]] \"We have helped banks and insurance teams keep devices locked down and audit-ready while cutting the manual work it takes to prove it, so exam prep is not a fire drill.\" [[proof is now a response, not a pitch]]",
+          "spAsk": "\"Might be worth **10 or 15 minutes** to compare what I noticed with how you are handling it today.\" [[low pressure]] \"If it is not relevant, you can tell me and we are done.\" [[give the out]] \"Open to it?\" [[stop]]"
+        }
+      },
+      "email": "**Subject:** a quick thought on managing devices across your branches\n\nHey {name},\n\n{you} with IBM here. I tried you by phone, but figured email might be easier.\n\nI was looking at {company} before I reached out. Between branches, remote staff, and what examiners expect, managing all those devices, and proving they're secure, is a real lift. We have helped banks and insurance teams cut the manual work of managing and proving device compliance, so exam time is not a scramble.\n\nI am not assuming this is a fit. I just noticed enough that I thought it was worth a quick note. Worth **10-15 minutes** to see if there is anything useful?\n\n{you}\n[Title] | IBM MaaS360\n{phone} | [Email]",
+      "emailProofRefs": []
+    },
+    {
+      "id": "healthcare",
+      "label": "Healthcare",
+      "type": "hospitals & health systems",
+      "fits": {
+        "text": "Fits: hospitals & health systems — **Oklahoma Heart, FMOLHS, North Memorial, Magellan Health**",
+        "accounts": [
+          "Oklahoma Heart",
+          "FMOLHS",
+          "North Memorial",
+          "Magellan Health"
+        ],
+        "approved": "Approved for external use by evanji, 2026-10-05"
+      },
+      "hookLabel": "Healthcare",
+      "hook": "\"Manage + secure shared and personal devices without adding clinician work.\"",
+      "nums": "locked down · audit-ready",
+      "scripts": {
+        "proofdefault": {
+          "tag": "Healthcare",
+          "stat": "**Researched:** secure shared/personal devices without clinician friction. **Proof:** tighter security, less IT load.",
+          "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. The tricky part is probably keeping shared and personal devices secure without piling more work on clinicians. We've helped healthcare teams tighten security while actually taking work off IT. Is that balance manageable today, or still a headache?\"",
+          "disc": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "curi": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "ask": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"The tricky part is probably keeping shared and personal devices secure without piling more work on clinicians.\" [[your researched read]] \"We've helped healthcare teams tighten security while actually taking work off IT.\" [[proof — then one question]] \"Is that balance manageable today, or still a headache?\" [[stop talking]]",
+          "spDisc": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]",
+          "spCuri": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]",
+          "spAsk": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]"
+        },
+        "proofconsult": {
+          "tag": "Healthcare",
+          "stat": "**Personalized:** secure shared/personal devices without clinician friction. **Proof:** tighter security with less IT workload.",
+          "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into **{company}** before I called, and honestly the challenge is probably keeping shared and personal devices secure without creating more work for clinicians and staff. We are setting aside time for a small number of healthcare teams to compare how you are securing shared, personal, and clinical devices today, and see where there may be room to tighten security without adding friction. Worth 15 minutes to see if there is anything there?\"",
+          "disc": "\"If it is useful, great. If not, you will know pretty quickly. No big pitch.\"",
+          "curi": "\"Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "ask": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded and human]] \"I was looking into **{company}** before I called, and honestly the challenge is probably keeping shared and personal devices secure without creating more work for clinicians and staff.\" [[make it feel researched]] \"We are setting aside time for a small number of healthcare teams to compare how you are securing shared, personal, and clinical devices today, and see where there may be room to tighten security without adding friction.\" [[clear value]] \"Worth 15 minutes to see if there is anything there?\" [[stop]]",
+          "spDisc": "\"If it is useful, great.\" [[make it easy]] \"If not, you will know pretty quickly. No big pitch.\" [[lower the pressure]]",
+          "spCuri": "\"Worst case, you get a couple ideas.\" [[simple]] \"Best case, we find something worth fixing. Either way, it is 15 minutes.\" [[reframe the risk]]",
+          "spAsk": "\"Worth a quick look next week?\" [[ask clean]] \"Mornings or afternoons easier for you?\" [[lock the time]]"
+        },
+        "proof": {
+          "tag": "Healthcare",
+          "stat": "**Noticed:** secure shared/personal devices without adding clinician work. **Proof:** locked down + audit-ready with less manual effort.",
+          "line": "\"Hey **{name}**? **{you}** with IBM. I was actually looking at **{company}** before I called. My guess is the real challenge is not just securing all the shared and personal devices, it is doing that without creating more work for clinicians and staff. How close am I there?\"",
+          "disc": "\"Yeah, that is usually the balance. Is the pressure more on the patient-data and compliance side, or more on just supporting all those devices day to day?\"",
+          "curi": "\"That is exactly why I asked. We have helped healthcare teams keep devices locked down and audit-ready while actually taking manual work off the staff, not adding to it.\"",
+          "ask": "\"Might be worth **10 or 15 minutes** to compare what I noticed with what is actually happening on your side. If it is not relevant, you can tell me and we are done. Open to it?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. Full honesty, I was actually looking at **{company}** before I called, so this is not totally random.\" [[easy, not pitchy]] \"My guess is the real challenge is not just securing all the shared and personal devices, it is doing that without creating more work for clinicians and staff.\" [[then the magic line]] \"How close am I there?\" [[stop talking, let them react]]",
+          "spDisc": "\"Yeah, that is usually the balance.\" [[react to what they said first]] \"Is the pressure more on the patient-data and compliance side, or more on just supporting all those devices day to day?\" [[one dig, then listen]]",
+          "spCuri": "\"That is exactly why I asked.\" [[their answer earned this]] \"We have helped healthcare teams keep devices locked down and audit-ready while actually taking manual work off the staff, not adding to it.\" [[proof is now a response, not a pitch]]",
+          "spAsk": "\"Might be worth **10 or 15 minutes** to compare what I noticed with what is actually happening on your side.\" [[low pressure]] \"If it is not relevant, you can tell me and we are done.\" [[give the out]] \"Open to it?\" [[stop]]"
+        }
+      },
+      "email": "**Subject:** a quick thought on managing your clinical devices\n\nHey {name},\n\n{you} with IBM here. I tried you by phone, but figured email might be easier.\n\nI was looking at your organization before I reached out. In healthcare the tricky part is usually managing all the shared and personal devices without piling more work on clinicians and staff. We have helped teams cut that manual device work while keeping everything locked down and audit-ready.\n\nI am not assuming this is a fit. I just noticed enough that I thought it was worth a quick note. Worth **10-15 minutes** to see if there is anything useful?\n\n{you}\n[Title] | IBM MaaS360\n{phone} | [Email]",
+      "emailProofRefs": []
+    },
+    {
+      "id": "industrial",
+      "label": "Manufacturing",
+      "type": "manufacturing & field ops",
+      "fits": {
+        "text": "Fits: manufacturing & field ops — **Vermeer, Ziegler CAT, Japs-Olson, Stuller**",
+        "accounts": [
+          "Vermeer",
+          "Ziegler CAT",
+          "Japs-Olson",
+          "Stuller"
+        ],
+        "approved": "Approved for external use by evanji, 2026-10-05"
+      },
+      "hookLabel": "Manufacturing",
+      "hook": "\"People off-desk; device updates and support go manual.\"",
+      "nums": "~60% fewer tickets",
+      "scripts": {
+        "proofdefault": {
+          "tag": "Manufacturing",
+          "stat": "**Researched:** plant/floor/field devices go manual. **Proof:** fewer tickets, remote management.",
+          "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. With people out on plants, floors, and field sites, device support probably gets manual fast. We've helped manufacturers cut device tickets and push updates remotely, no extra headcount. Is that under control for you, or are there still manual runs eating time?\"",
+          "disc": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "curi": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "ask": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"With people out on plants, floors, and field sites, device support probably gets manual fast.\" [[your researched read]] \"We've helped manufacturers cut device tickets and push updates remotely, no extra headcount.\" [[proof — then one question]] \"Is that under control for you, or are there still manual runs eating time?\" [[stop talking]]",
+          "spDisc": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]",
+          "spCuri": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]",
+          "spAsk": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]"
+        },
+        "proofconsult": {
+          "tag": "Manufacturing",
+          "stat": "**Personalized:** plant/floor/field devices create manual support. **Proof:** fewer tickets and remote management.",
+          "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into **{company}** before I called, and honestly with people spread across plants, floors, or field locations, device support could get pretty manual pretty quickly. We are setting aside time for a small number of manufacturing teams to compare how you are managing devices across locations today, and see where remote updates and support could take manual work off the team. Worth 15 minutes to see if there is anything there?\"",
+          "disc": "\"If it is useful, great. If not, you will know pretty quickly. No big pitch.\"",
+          "curi": "\"Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "ask": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded and human]] \"I was looking into **{company}** before I called, and honestly with people spread across plants, floors, or field locations, device support could get pretty manual pretty quickly.\" [[make it feel researched]] \"We are setting aside time for a small number of manufacturing teams to compare how you are managing devices across locations today, and see where remote updates and support could take manual work off the team.\" [[clear value]] \"Worth 15 minutes to see if there is anything there?\" [[stop]]",
+          "spDisc": "\"If it is useful, great.\" [[make it easy]] \"If not, you will know pretty quickly. No big pitch.\" [[lower the pressure]]",
+          "spCuri": "\"Worst case, you get a couple ideas.\" [[simple]] \"Best case, we find something worth fixing. Either way, it is 15 minutes.\" [[reframe the risk]]",
+          "spAsk": "\"Worth a quick look next week?\" [[ask clean]] \"Mornings or afternoons easier for you?\" [[lock the time]]"
+        },
+        "proof": {
+          "tag": "Manufacturing",
+          "stat": "**Noticed:** people not behind desks; device updates/support go manual. **Proof:** ~60% fewer tickets, remote updates.",
+          "line": "\"Hey **{name}**? **{you}** with IBM. I was actually looking at **{company}** before I called. It seems like you have got a lot of people who are not just sitting behind a desk, and usually when I see that, keeping their devices updated and supported gets a lot more manual than anyone wants. How close am I there?\"",
+          "disc": "\"Yeah, that is what I figured. Is the bigger headache pushing updates and security out to those devices, or the support runs when something goes down out on the floor?\"",
+          "curi": "\"That is exactly why I asked. We have helped manufacturers cut device tickets around **60%** by handling updates and fixes remotely instead of someone walking the floor device by device.\"",
+          "ask": "\"Might be worth **10 or 15 minutes** to see if we can take some of that manual work off your team. If it is not relevant, you can tell me and we are done. Open to it?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. Full honesty, I was actually looking at **{company}** before I called, so this is not totally random.\" [[easy, not pitchy]] \"It seems like you have got a lot of people who are not just sitting behind a desk, and usually when I see that, keeping their devices updated and supported gets a lot more manual than anyone wants.\" [[then the magic line]] \"How close am I there?\" [[stop talking, let them react]]",
+          "spDisc": "\"Yeah, that is what I figured.\" [[react to what they said first]] \"Is the bigger headache pushing updates and security out to those devices, or the support runs when something goes down out on the floor?\" [[one dig, then listen]]",
+          "spCuri": "\"That is exactly why I asked.\" [[their answer earned this]] \"We have helped manufacturers cut device tickets around **60%** by handling updates and fixes remotely instead of someone walking the floor device by device.\" [[proof is now a response, not a pitch]]",
+          "spAsk": "\"Might be worth **10 or 15 minutes** to see if we can take some of that manual work off your team.\" [[low pressure]] \"If it is not relevant, you can tell me and we are done.\" [[give the out]] \"Open to it?\" [[stop]]",
+          "proofRefs": [
+            "tickets-60"
+          ]
+        }
+      },
+      "email": "**Subject:** a thought on your floor and field devices\n\nHey {name},\n\n{you} with IBM here. I tried you by phone, but figured email might be easier.\n\nI was looking at {company} before I reached out. With a lot of people who are not behind a desk, keeping devices updated and supported can get very manual. We have helped manufacturers cut device tickets around **60%** by handling updates remotely.\n\nI am not assuming this is a fit. I just noticed enough that I thought it was worth a quick note. Worth **10-15 minutes** to see if there is anything useful?\n\n{you}\n[Title] | IBM MaaS360\n{phone} | [Email]",
+      "emailProofRefs": [
+        "tickets-60"
+      ],
+      "proofRefs": [
+        "tickets-60"
+      ]
+    },
+    {
+      "id": "retail",
+      "label": "Retail / Field",
+      "type": "multi-location & stores",
+      "fits": {
+        "text": "Fits: multi-location & stores — **Caribou Coffee, Living Spaces, Restaurant Technologies**",
+        "accounts": [
+          "Caribou Coffee",
+          "Living Spaces",
+          "Restaurant Technologies"
+        ],
+        "approved": "Approved for external use by evanji, 2026-10-05"
+      },
+      "hookLabel": "Retail / Field",
+      "hook": "\"Devices across many sites = lots of small daily problems.\"",
+      "nums": "~60% fewer tickets",
+      "scripts": {
+        "proofdefault": {
+          "tag": "Retail / Field",
+          "stat": "**Researched:** devices across locations, daily small fires. **Proof:** remote fixes, lower ticket load.",
+          "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. With devices spread across locations, support probably turns into a lot of small daily fires. We've helped multi-site teams cut ticket volume by pushing fixes out remotely instead of going site by site. Is that smooth for you, or do those little issues still pile up?\"",
+          "disc": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "curi": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "ask": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"With devices spread across locations, support probably turns into a lot of small daily fires.\" [[your researched read]] \"We've helped multi-site teams cut ticket volume by pushing fixes out remotely instead of going site by site.\" [[proof — then one question]] \"Is that smooth for you, or do those little issues still pile up?\" [[stop talking]]",
+          "spDisc": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]",
+          "spCuri": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]",
+          "spAsk": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]"
+        },
+        "proofconsult": {
+          "tag": "Retail / Field",
+          "stat": "**Personalized:** multi-location device support creates daily small problems. **Proof:** remote updates and lower ticket load.",
+          "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into **{company}** before I called, and honestly with devices spread across multiple locations, support probably turns into a lot of small problems that eat time every day. We are setting aside time for a small number of retail / field teams to compare how you are supporting devices across locations today, and see if there are ways to cut the daily support load. Worth 15 minutes to see if there is anything there?\"",
+          "disc": "\"If it is useful, great. If not, you will know pretty quickly. No big pitch.\"",
+          "curi": "\"Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "ask": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded and human]] \"I was looking into **{company}** before I called, and honestly with devices spread across multiple locations, support probably turns into a lot of small problems that eat time every day.\" [[make it feel researched]] \"We are setting aside time for a small number of retail / field teams to compare how you are supporting devices across locations today, and see if there are ways to cut the daily support load.\" [[clear value]] \"Worth 15 minutes to see if there is anything there?\" [[stop]]",
+          "spDisc": "\"If it is useful, great.\" [[make it easy]] \"If not, you will know pretty quickly. No big pitch.\" [[lower the pressure]]",
+          "spCuri": "\"Worst case, you get a couple ideas.\" [[simple]] \"Best case, we find something worth fixing. Either way, it is 15 minutes.\" [[reframe the risk]]",
+          "spAsk": "\"Worth a quick look next week?\" [[ask clean]] \"Mornings or afternoons easier for you?\" [[lock the time]]"
+        },
+        "proof": {
+          "tag": "Retail / Field",
+          "stat": "**Noticed:** devices across many locations; support = lots of small daily problems. **Proof:** ~60% fewer tickets, remote fixes.",
+          "line": "\"Hey **{name}**? **{you}** with IBM. I was actually looking at **{company}** before I called. It looks like you have got devices spread across a bunch of different locations, and usually when I see that, support turns into a lot of little problems that eat time every single day. How close am I there?\"",
+          "disc": "\"Yeah, that is pretty common. Is the bigger issue keeping those devices updated and secure across sites, or the support load when something breaks at a location?\"",
+          "curi": "\"That is exactly why I asked. We have helped teams with lots of sites cut support tickets around **60%** by pushing updates and fixes out remotely instead of sending someone store to store.\"",
+          "ask": "\"Might be worth **10 or 15 minutes** to see if we can take some of that daily support load off your team. If it is not relevant, you can tell me and we are done. Open to it?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. Full honesty, I was actually looking at **{company}** before I called, so this is not totally random.\" [[easy, not pitchy]] \"It looks like you have got devices spread across a bunch of different locations, and usually when I see that, support turns into a lot of little problems that eat time every single day.\" [[then the magic line]] \"How close am I there?\" [[stop talking, let them react]]",
+          "spDisc": "\"Yeah, that is pretty common.\" [[react to what they said first]] \"Is the bigger issue keeping those devices updated and secure across sites, or the support load when something breaks at a location?\" [[one dig, then listen]]",
+          "spCuri": "\"That is exactly why I asked.\" [[their answer earned this]] \"We have helped teams with lots of sites cut support tickets around **60%** by pushing updates and fixes out remotely instead of sending someone store to store.\" [[proof is now a response, not a pitch]]",
+          "spAsk": "\"Might be worth **10 or 15 minutes** to see if we can take some of that daily support load off your team.\" [[low pressure]] \"If it is not relevant, you can tell me and we are done.\" [[give the out]] \"Open to it?\" [[stop]]",
+          "proofRefs": [
+            "tickets-60"
+          ]
+        }
+      },
+      "email": "**Subject:** a thought on devices across your locations\n\nHey {name},\n\n{you} with IBM here. I tried you by phone, but figured email might be easier.\n\nI was looking at {company} before I reached out. With devices spread across a lot of locations, support tends to become a lot of small daily problems. We have helped teams with many sites cut tickets around **60%** with remote updates and fixes.\n\nI am not assuming this is a fit. I just noticed enough that I thought it was worth a quick note. Worth **10-15 minutes** to see if there is anything useful?\n\n{you}\n[Title] | IBM MaaS360\n{phone} | [Email]",
+      "emailProofRefs": [
+        "tickets-60"
+      ],
+      "proofRefs": [
+        "tickets-60"
+      ]
+    },
+    {
+      "id": "legal",
+      "label": "Legal",
+      "type": "law firms",
+      "fits": {
+        "text": "Fits: law firms — **Polsinelli, Husch Blackwell, Fish & Richardson**",
+        "accounts": [
+          "Polsinelli",
+          "Husch Blackwell",
+          "Fish & Richardson"
+        ],
+        "approved": "Approved for external use by evanji, 2026-10-05"
+      },
+      "hookLabel": "Legal",
+      "hook": "\"Manage every device for traveling attorneys; protect client data, no friction.\"",
+      "nums": "secure BYOD · less IT load",
+      "scripts": {
+        "proofdefault": {
+          "tag": "Legal",
+          "stat": "**Researched:** client data across mobile attorneys/staff. **Proof:** secure BYOD/travelers, less IT load.",
+          "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. The tricky part is probably protecting client data across laptops and phones without slowing attorneys down. We've helped firms lock down every device, including BYOD and travelers, without adding friction. Is that handled well today, or still a balancing act?\"",
+          "disc": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "curi": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "ask": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"The tricky part is probably protecting client data across laptops and phones without slowing attorneys down.\" [[your researched read]] \"We've helped firms lock down every device, including BYOD and travelers, without adding friction.\" [[proof — then one question]] \"Is that handled well today, or still a balancing act?\" [[stop talking]]",
+          "spDisc": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]",
+          "spCuri": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]",
+          "spAsk": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]"
+        },
+        "proofconsult": {
+          "tag": "Legal",
+          "stat": "**Personalized:** client data across mobile attorneys and staff. **Proof:** secure BYOD/traveling users with less IT support load.",
+          "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into **{company}** before I called, and honestly the tricky part is probably protecting client data across laptops and phones without slowing down attorneys and staff. We are setting aside time for a small number of legal teams to compare how you are protecting client data across devices today, and see where there may be room to tighten control without slowing people down. Worth 15 minutes to see if there is anything there?\"",
+          "disc": "\"If it is useful, great. If not, you will know pretty quickly. No big pitch.\"",
+          "curi": "\"Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "ask": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded and human]] \"I was looking into **{company}** before I called, and honestly the tricky part is probably protecting client data across laptops and phones without slowing down attorneys and staff.\" [[make it feel researched]] \"We are setting aside time for a small number of legal teams to compare how you are protecting client data across devices today, and see where there may be room to tighten control without slowing people down.\" [[clear value]] \"Worth 15 minutes to see if there is anything there?\" [[stop]]",
+          "spDisc": "\"If it is useful, great.\" [[make it easy]] \"If not, you will know pretty quickly. No big pitch.\" [[lower the pressure]]",
+          "spCuri": "\"Worst case, you get a couple ideas.\" [[simple]] \"Best case, we find something worth fixing. Either way, it is 15 minutes.\" [[reframe the risk]]",
+          "spAsk": "\"Worth a quick look next week?\" [[ask clean]] \"Mornings or afternoons easier for you?\" [[lock the time]]"
+        },
+        "proof": {
+          "tag": "Legal",
+          "stat": "**Noticed:** protect client data across mobile attorneys/offices without friction. **Proof:** secure BYOD + less IT support load.",
+          "line": "\"Hey **{name}**? **{you}** with IBM. I was actually looking at **{company}** before I called. My guess is the tricky part is keeping client data protected across everyone's laptops and phones, including attorneys who travel, without slowing them down or adding hoops. How close am I there?\"",
+          "disc": "\"Yeah, that is usually the tension. Is the bigger concern protecting client and matter data on all those devices, or supporting attorneys and staff across offices when something goes wrong?\"",
+          "curi": "\"That is exactly why I asked. We have helped firms keep client data secure across every device, including BYOD and traveling attorneys, while taking support work off IT instead of adding friction.\"",
+          "ask": "\"Might be worth **10 or 15 minutes** to see if there is a cleaner way to handle it. If it is not relevant, you can tell me and we are done. Open to it?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. Full honesty, I was actually looking at **{company}** before I called, so this is not totally random.\" [[easy, not pitchy]] \"My guess is the tricky part is keeping client data protected across everyone's laptops and phones, including attorneys who travel, without slowing them down or adding hoops.\" [[then the magic line]] \"How close am I there?\" [[stop talking, let them react]]",
+          "spDisc": "\"Yeah, that is usually the tension.\" [[react to what they said first]] \"Is the bigger concern protecting client and matter data on all those devices, or supporting attorneys and staff across offices when something goes wrong?\" [[one dig, then listen]]",
+          "spCuri": "\"That is exactly why I asked.\" [[their answer earned this]] \"We have helped firms keep client data secure across every device, including BYOD and traveling attorneys, while taking support work off IT instead of adding friction.\" [[proof is now a response, not a pitch]]",
+          "spAsk": "\"Might be worth **10 or 15 minutes** to see if there is a cleaner way to handle it.\" [[low pressure]] \"If it is not relevant, you can tell me and we are done.\" [[give the out]] \"Open to it?\" [[stop]]"
+        }
+      },
+      "email": "**Subject:** a thought on managing devices across your firm\n\nHey {name},\n\n{you} with IBM here. I tried you by phone, but figured email might be easier.\n\nI was looking at {company} before I reached out. Managing everyone's laptops and phones, including attorneys who travel, without slowing them down or losing track of client data is a real balancing act. We have helped firms manage every device, including BYOD, while taking support work off IT and keeping data protected.\n\nI am not assuming this is a fit. I just noticed enough that I thought it was worth a quick note. Worth **10-15 minutes** to see if there is anything useful?\n\n{you}\n[Title] | IBM MaaS360\n{phone} | [Email]",
+      "emailProofRefs": []
+    },
+    {
+      "id": "profservices",
+      "label": "Prof. Services",
+      "type": "consulting & accounting",
+      "fits": {
+        "text": "Fits: consulting & accounting — **EisnerAmper, Eide Bailly, Augeo, Colle & McVoy**",
+        "accounts": [
+          "EisnerAmper",
+          "Eide Bailly",
+          "Augeo",
+          "Colle & McVoy"
+        ],
+        "approved": "Approved for external use by evanji, 2026-10-05"
+      },
+      "hookLabel": "Professional Services",
+      "hook": "\"Client data everywhere; people always on the road.\"",
+      "nums": "secured devices · less manual work",
+      "scripts": {
+        "proofdefault": {
+          "tag": "Professional Services",
+          "stat": "**Researched:** client data everywhere, mobile workers. **Proof:** secure + consistent, less manual work.",
+          "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. With client data everywhere and people always on the road, keeping devices secure and consistent is probably a juggle. We've helped consulting and accounting teams lock that down while cutting manual setup and support. Is that dialed in for you, or still a bit of a juggle?\"",
+          "disc": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "curi": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "ask": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"With client data everywhere and people always on the road, keeping devices secure and consistent is probably a juggle.\" [[your researched read]] \"We've helped consulting and accounting teams lock that down while cutting manual setup and support.\" [[proof — then one question]] \"Is that dialed in for you, or still a bit of a juggle?\" [[stop talking]]",
+          "spDisc": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]",
+          "spCuri": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]",
+          "spAsk": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]"
+        },
+        "proofconsult": {
+          "tag": "Professional Services",
+          "stat": "**Personalized:** client data everywhere, mobile workers, device consistency. **Proof:** secure devices with less setup/support work.",
+          "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into **{company}** before I called, and honestly with client data everywhere and people constantly on the road or at client sites, keeping devices secure and consistent is probably a balancing act. We are setting aside time for a small number of professional services teams to compare how you are securing and supporting devices for people on the road today, and see where there may be room to reduce manual work. Worth 15 minutes to see if there is anything there?\"",
+          "disc": "\"If it is useful, great. If not, you will know pretty quickly. No big pitch.\"",
+          "curi": "\"Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "ask": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded and human]] \"I was looking into **{company}** before I called, and honestly with client data everywhere and people constantly on the road or at client sites, keeping devices secure and consistent is probably a balancing act.\" [[make it feel researched]] \"We are setting aside time for a small number of professional services teams to compare how you are securing and supporting devices for people on the road today, and see where there may be room to reduce manual work.\" [[clear value]] \"Worth 15 minutes to see if there is anything there?\" [[stop]]",
+          "spDisc": "\"If it is useful, great.\" [[make it easy]] \"If not, you will know pretty quickly. No big pitch.\" [[lower the pressure]]",
+          "spCuri": "\"Worst case, you get a couple ideas.\" [[simple]] \"Best case, we find something worth fixing. Either way, it is 15 minutes.\" [[reframe the risk]]",
+          "spAsk": "\"Worth a quick look next week?\" [[ask clean]] \"Mornings or afternoons easier for you?\" [[lock the time]]"
+        },
+        "proof": {
+          "tag": "Professional Services",
+          "stat": "**Noticed:** client data everywhere + people on the road. **Proof:** secured devices, less manual setup/support.",
+          "line": "\"Hey **{name}**? **{you}** with IBM. I was actually looking at **{company}** before I called. My guess is with client data everywhere and people constantly on the road or at client sites, keeping all those devices secure and consistent is a real balancing act. How close am I there?\"",
+          "disc": "\"Yeah, that is usually the case. Is the bigger challenge securing client data across all the laptops and phones, or just keeping devices consistent and supported for people who are rarely in one office?\"",
+          "curi": "\"That is exactly why I asked. We have helped consulting and accounting firms keep client data locked down across every device while cutting the manual setup and support, even with people spread out.\"",
+          "ask": "\"Might be worth **10 or 15 minutes** to compare notes on how you are handling it. If it is not relevant, you can tell me and we are done. Open to it?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. Full honesty, I was actually looking at **{company}** before I called, so this is not totally random.\" [[easy, not pitchy]] \"My guess is with client data everywhere and people constantly on the road or at client sites, keeping all those devices secure and consistent is a real balancing act.\" [[then the magic line]] \"How close am I there?\" [[stop talking, let them react]]",
+          "spDisc": "\"Yeah, that is usually the case.\" [[react to what they said first]] \"Is the bigger challenge securing client data across all the laptops and phones, or just keeping devices consistent and supported for people who are rarely in one office?\" [[one dig, then listen]]",
+          "spCuri": "\"That is exactly why I asked.\" [[their answer earned this]] \"We have helped consulting and accounting firms keep client data locked down across every device while cutting the manual setup and support, even with people spread out.\" [[proof is now a response, not a pitch]]",
+          "spAsk": "\"Might be worth **10 or 15 minutes** to compare notes on how you are handling it.\" [[low pressure]] \"If it is not relevant, you can tell me and we are done.\" [[give the out]] \"Open to it?\" [[stop]]"
+        }
+      },
+      "email": "**Subject:** a quick thought on managing devices for people on the road\n\nHey {name},\n\n{you} with IBM here. I tried you by phone, but figured email might be easier.\n\nI was looking at {company} before I reached out. With people constantly on the road or at client sites, keeping all those devices managed and consistent, and client data protected, is tough. We have helped consulting and accounting firms cut the manual setup and support while keeping everything locked down.\n\nI am not assuming this is a fit. I just noticed enough that I thought it was worth a quick note. Worth **10-15 minutes** to see if there is anything useful?\n\n{you}\n[Title] | IBM MaaS360\n{phone} | [Email]",
+      "emailProofRefs": []
+    },
+    {
+      "id": "general",
+      "label": "General",
+      "type": "",
+      "fits": {
+        "text": "Fits: mixed/unknown IT shops — **Comporium, Vector Security, Daktronics, Deluxe**",
+        "accounts": [
+          "Comporium",
+          "Vector Security",
+          "Daktronics",
+          "Deluxe"
+        ],
+        "approved": "Approved for external use by evanji, 2026-10-05"
+      },
+      "hookLabel": "General / Default",
+      "hook": "\"One-line: setup, security, and support may be quietly eating IT time.\"",
+      "nums": "~50 hrs/mo · 45 min → 5",
+      "scripts": {
+        "proofdefault": {
+          "tag": "General",
+          "stat": "**Researched:** enough people + devices that setup/security/support eat IT time. **Proof:** setup 45 min → 5.",
+          "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. You've got enough people and devices that setup, security, and support are probably quietly eating IT time. We just helped a similar team cut new-device setup from about 45 minutes to 5. Is that pretty dialed in for you, or still a bit of a grind?\"",
+          "disc": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "curi": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "ask": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"You've got enough people and devices that setup, security, and support are probably quietly eating IT time.\" [[your researched read]] \"We just helped a similar team cut new-device setup from about 45 minutes to 5.\" [[proof — then one question]] \"Is that pretty dialed in for you, or still a bit of a grind?\" [[stop talking]]",
+          "spDisc": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]",
+          "spCuri": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]",
+          "spAsk": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]",
+          "proofRefs": [
+            "setup-45-5"
+          ]
+        },
+        "proofconsult": {
+          "tag": "General",
+          "stat": "**Personalized:** enough people + devices that setup/security/support may be eating IT time. **Proof:** 45 min to 5, significant IT time back.",
+          "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into **{company}** before I called, and honestly you have enough people and devices where setup, security, and support could quietly be eating more IT time than anyone realizes. We are setting aside time for a small number of general teams to compare how you are handling device management and security today, and see if there are easy wins around manual work, security, or support. Worth 15 minutes to see if there is anything there?\"",
+          "disc": "\"If it is useful, great. If not, you will know pretty quickly. No big pitch.\"",
+          "curi": "\"Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "ask": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded and human]] \"I was looking into **{company}** before I called, and honestly you have enough people and devices where setup, security, and support could quietly be eating more IT time than anyone realizes.\" [[make it feel researched]] \"We are setting aside time for a small number of general teams to compare how you are handling device management and security today, and see if there are easy wins around manual work, security, or support.\" [[clear value]] \"Worth 15 minutes to see if there is anything there?\" [[stop]]",
+          "spDisc": "\"If it is useful, great.\" [[make it easy]] \"If not, you will know pretty quickly. No big pitch.\" [[lower the pressure]]",
+          "spCuri": "\"Worst case, you get a couple ideas.\" [[simple]] \"Best case, we find something worth fixing. Either way, it is 15 minutes.\" [[reframe the risk]]",
+          "spAsk": "\"Worth a quick look next week?\" [[ask clean]] \"Mornings or afternoons easier for you?\" [[lock the time]]",
+          "proofRefs": [
+            "setup-45-5"
+          ]
+        },
+        "proof": {
+          "tag": "General",
+          "stat": "**Noticed:** enough people + devices that setup/security/support may be eating IT time. **Proof:** ~50 IT hours/mo back, 45 min → 5 setup.",
+          "line": "\"Hey **{name}**? **{you}** with IBM. I was actually looking at **{company}** before I called. One thing that stood out is it looks like you have enough people and devices where setup, security, and support could quietly be eating more IT time than anyone realizes. How close am I there?\"",
+          "disc": "\"Yeah, okay, that tracks. Is the bigger drain the setup and rollout side, the security side, or the day to day support tickets?\"",
+          "curi": "\"That is exactly why I asked. We recently helped a team in a really similar spot claw back about **50 IT hours a month**, mostly by cutting new-device setup from around 45 minutes to 5.\"",
+          "ask": "\"Might be worth **10 or 15 minutes** to see if there is a similar opportunity for you. If it is not relevant, you can tell me and we are done. Open to it?\"",
+          "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. Full honesty, I was actually looking at **{company}** before I called, so this is not totally random.\" [[easy, not pitchy]] \"One thing that stood out is it looks like you have enough people and devices where setup, security, and support could quietly be eating more IT time than anyone realizes.\" [[then the magic line]] \"How close am I there?\" [[stop talking, let them react]]",
+          "spDisc": "\"Yeah, okay, that tracks.\" [[react to what they said first]] \"Is the bigger drain the setup and rollout side, the security side, or the day to day support tickets?\" [[one dig, then listen]]",
+          "spCuri": "\"That is exactly why I asked.\" [[their answer earned this]] \"We recently helped a team in a really similar spot claw back about **50 IT hours a month**, mostly by cutting new-device setup from around 45 minutes to 5.\" [[proof is now a response, not a pitch]]",
+          "spAsk": "\"Might be worth **10 or 15 minutes** to see if there is a similar opportunity for you.\" [[low pressure]] \"If it is not relevant, you can tell me and we are done.\" [[give the out]] \"Open to it?\" [[stop]]",
+          "proofRefs": [
+            "setup-45-5"
+          ]
+        }
+      },
+      "email": "**Subject:** a thought after looking at {company}\n\nHey {name},\n\n{you} with IBM here. I tried you by phone, but figured email might be easier.\n\nI was looking at {company} before I reached out, and it looks like device setup, security, and support could quietly be eating more IT time than anyone realizes. We recently helped a similar team claw back about **50 IT hours a month**.\n\nI am not assuming this is a fit. I just noticed enough that I thought it was worth a quick note. Worth **10-15 minutes** to see if there is anything useful?\n\n{you}\n[Title] | IBM MaaS360\n{phone} | [Email]",
+      "emailProofRefs": [
+        "setup-45-5"
+      ],
+      "proofRefs": [
+        "setup-45-5"
+      ]
+    }
+  ],
+  "sectorRefLabel": "🎯 Researched proof lines · what you noticed, per sector",
+  "sectorStripLabel": "🎯 Persona / Sector — personalizes your Proof opener + the follow-up",
+  "prep": {
+    "research": [
+      {
+        "label": "Reason to call",
+        "text": "Hiring, growth, new locations, remote work, compliance, or device-heavy teams."
+      },
+      {
+        "label": "Likely persona",
+        "text": "IT Director, Security, Ops, Infrastructure, EUC, Help Desk, or CIO."
+      },
+      {
+        "label": "Don't over-research",
+        "text": "30-60 seconds is enough before a dial."
+      }
+    ],
+    "gatekeeper": {
+      "line": "Hey, this is {you} with IBM. I was trying to reach [Decision Maker]. Are they around?",
+      "note": "If asked what it's about: \"Quick question on who handles device management and mobile security there.\""
+    },
+    "automatedAgent": {
+      "line": "Hi, this is {you} with IBM, trying to reach {name}. Quick question on how {company} is handling device management and mobile security. Best number for me is {phone}.",
+      "note": "Your name, IBM, the person, one reason, your number."
+    },
+    "ai": {
+      "text": "Before you dial: find one real reason to call ({company}, {role}, {type}).",
+      "prompt": "Give me one reason to call {company} about IBM MaaS360 (device management and mobile security) for a {role}. Use hiring, growth, new locations, remote work, compliance, or device-heavy teams. Phrase it so it finishes \"I noticed {company} …\"."
+    }
+  },
+  "openerGuide": {
+    "intro": "**Raw cold call? Start here.** ★ **Proof** is the default — you did your homework, you name a result, you ask one easy question. Hit a **Persona / Sector** button below to personalize it. ★ **Consultation** is the warm invite: you researched them, you think it's a fit, and you offer a free 15-minute review of their environment. ★ **Consult Short** is that same invite but tighter — hook, ask for 30 seconds, then the offer. • **Permission** for execs or guarded prospects. • **Direct** and **Casual** for specific moods. • **Discovery** is the question-first, let-them-pick-a-lane opener. • On Proof, the consult offer also lives in the follow-up — drop it there only if they stall.",
+    "hint": "default pattern: did my homework → here is a result → does this apply to you? — then the ask. Consult drops in only if they hesitate.",
+    "proofStackIntro": "**Use this when you want punchy, researched, and not robotic.** The move is simple: you did your homework, you name a result, you ask if it applies, then you sell the 10 to 15 minute conversation.",
+    "proofStackHint": "Use the persona buttons above the call flow first. They change the talk track so Proof and Proof + Consult sound like you actually looked at that type of company."
+  },
+  "openers": [
+    {
+      "id": "proofdefault",
+      "tag": "Proof ★",
+      "visible": true,
+      "role": "Open · Proof ★ (pick a sector below)",
+      "cue": "researched → proof → one question",
+      "line": "\"Hey **{name}**? **{you}** with IBM, down in {city}. I'll be quick, promise. So, real talk — I actually poked around **{company}** a bit before I called, you're not just a random dial. You've got enough people and devices that setup, security, and support are probably quietly eating IT time. We just helped a similar team cut new-device setup from about 45 minutes to 5. Is that pretty dialed in for you, or still a bit of a grind?\"",
+      "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} — I'm with IBM, down here in {city}. I'll be quick, promise.\" [[warm, then slow down]] \"So, full honesty — I actually poked around **{company}** a little before I called, you're not just a random dial.\" [[let it land]] \"You've got enough people and devices that setup, security, and support are probably quietly eating IT time.\" [[your researched read]] \"We just helped a similar team cut new-device setup from about 45 minutes to 5.\" [[proof — then one question]] \"Is that pretty dialed in for you, or still a bit of a grind?\" [[stop talking]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "If they engage → ask",
+          "role": "If they engage → ask",
+          "line": "\"Yeah, that's exactly the kind of thing we help teams tighten up. Honestly, might be worth **15 minutes** to compare notes. If it's not a fit, you'll know fast. Worth a look?\"",
+          "spoken": "\"Yeah — that's exactly the kind of thing we help teams tighten up.\" [[react, then go]] \"Honestly, might be worth **15 minutes** to compare notes.\" [[confident, low pressure]] \"If it's not a fit, you'll know fast. Worth a look?\" [[stop — let them answer]]"
+        },
+        {
+          "key": "curi",
+          "label": "If: \"we already have a tool\"",
+          "role": "If: \"we already have a tool\"",
+          "line": "\"Yeah, I'd be surprised if you didn't, most teams do. The point isn't ripping that out, just showing you where the gaps still cost IT time. That's the 15 minutes.\"",
+          "spoken": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, no push]] \"The point isn't ripping that out, just showing you where the gaps still cost IT time.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask]]"
+        },
+        {
+          "key": "ask",
+          "label": "If: \"just send info\" / \"no time\"",
+          "role": "If: \"just send info\" / \"no time\"",
+          "line": "\"Totally get it. A generic PDF won't tell you much though, and it's only 15 minutes. Worst case you're out 15, best case we save your team a lot more. Fair trade?\"",
+          "spoken": "[[they say: \"just email me\" or \"no time\"]] \"Totally get it.\" [[never fight it]] \"A generic PDF won't tell you much though — and honestly it's just 15 minutes.\" [[value, not pressure]] \"Worst case you're out 15, best case we save your team a lot more. Fair trade?\" [[stop]]"
+        }
+      ],
+      "sectorSet": "proofdefault",
+      "handlesObjectionsInBeats": true,
+      "card": {
+        "title": "Proof, default",
+        "text": "\"Hey, is this {name}?\"\n\n\"Hey {name}, {you} with IBM, calling from {city}. I’ll keep this quick.\"\n\n\"I was looking into {company} before I called, and honestly I saw enough to think this might be worth a conversation.\"\n\n\"We recently helped a team similar to yours cut device setup from around 45 minutes to about 5, and free up a pretty significant amount of IT time.\"\n\n\"Curious, is that something you’ve already got nailed down, or does the team still deal with some of that?\"",
+        "note": "Best default. It gives them a reason to care before you ask anything.",
+        "proofRefs": [
+          "setup-45-5"
+        ]
+      },
+      "proofRefs": [
+        "setup-45-5"
+      ]
+    },
+    {
+      "id": "consult",
+      "tag": "Consultation ★",
+      "visible": true,
+      "role": "Open · Consultation — free review, confident invite",
+      "cue": "did research → could be a fit → free review → how does 15 min sound",
+      "line": "\"Hey, is this **{name}**? **{you}** with IBM, I'll keep this quick. So I actually did some homework on **{company}** before I called, and honestly **I think we could be a really good fit** — might genuinely be worth your time. What I'd love to do is offer you a **free consultation to review your environment** — how you're managing your devices day to day, and where you could simplify things and tighten security. **How does 15 minutes sound?**\"",
+      "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM. I'll keep this quick.\" [[let them say okay]] \"So I actually did some homework on **{company}** before I called… and honestly **I think we could be a really good fit**.\" [[say it like you mean it, don't rush]] \"Might genuinely be worth your time.\" [[let it land]] \"What I'd love to do is offer you a **free consultation to review your environment** — how you're managing your devices day to day, and where there's room to simplify things and tighten security.\" [[warm, confident]] \"**How does 15 minutes sound?**\" [[stop — let them answer]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "If they say: \"we already have something\"",
+          "role": "Objection · \"we already have something\"",
+          "line": "\"Yeah, I'd be surprised if you didn't — most teams do. That's actually the whole point of the review: not to replace what's working, just to show you where the gaps are. That's the 15 minutes.\"",
+          "spoken": "[[they say: \"we already have a tool\"]] \"Yeah, I'd be surprised if you didn't — most teams do.\" [[agree fast, zero push]] \"That's actually the whole point of the review though. It's not about replacing what's working, just showing you where the gaps still are.\" [[reframe]] \"That's the 15 minutes. Worth a look?\" [[re-ask, then stop]]"
+        },
+        {
+          "key": "curi",
+          "label": "If they say: \"just send me info\"",
+          "role": "Objection · \"just send me info\"",
+          "line": "\"Happy to — but honestly a generic PDF won't tell you much. The review is built around your setup, so 15 minutes on a call will be way more useful than anything I'd email. Worth a quick look?\"",
+          "spoken": "[[they say: \"just email me something\"]] \"Yeah, happy to.\" [[never fight it]] \"Honestly though, a generic PDF isn't gonna tell you much. The whole review is built around your setup, so 15 minutes on a call will be way more useful than anything I'd send over.\" [[value, not pressure]] \"Want me to just grab 15 minutes instead?\" [[re-ask]]"
+        },
+        {
+          "key": "ask",
+          "label": "If they say: \"I don't have time\"",
+          "role": "Objection · \"I don't have time\"",
+          "line": "\"Totally get it, that's exactly why it's only 15 minutes. If nothing useful comes out of it, you've lost 15 minutes. If something does, it could save your team a lot more than that. Fair trade?\"",
+          "spoken": "[[they say: \"I'm slammed / no time\"]] \"Totally get it — that's honestly why it's just 15 minutes.\" [[empathize, stay confident]] \"Worst case, you're out 15 minutes. Best case, we spot something that saves your team a lot more than that down the line.\" [[flip the math]] \"Fair trade?\" [[stop — let them answer]]"
+        }
+      ],
+      "handlesObjectionsInBeats": true,
+      "consultOffer": true
+    },
+    {
+      "id": "consultshort",
+      "tag": "Consult Short ★",
+      "visible": true,
+      "role": "Open · Consult Short — worth your time, then ask for 30 seconds",
+      "cue": "hook → got 30 sec? → the review → gut check → lock",
+      "line": "\"Hey, is this **{name}**? **{you}** with IBM, down in {city}. I'll keep this quick. I spent a little time looking into **{company}** before I called, and honestly I saw enough to think this conversation would be worth your time. You got 30 seconds and I'll tell you why?\"",
+      "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, down in {city} — I'll keep this quick.\" [[easy, like you know them]] \"I spent a little time looking into **{company}** before I called, and honestly I saw enough to think this conversation would be worth your time.\" [[pause — let it land]] \"You got 30 seconds and I'll tell you why?\" [[stop — wait for the yes before you keep going]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "They say yes → what it is",
+          "role": "They say yes → what it is",
+          "line": "\"So the reason I'm reaching out — we're offering a complimentary review of how you manage and secure your devices. In about 15 minutes we'll look at how you're handling it today, show you what's working for organizations with similar environments, and point out where you could simplify device management, take work off IT, and tighten security where it counts.\"",
+          "spoken": "[[once they say yes — now the monologue]] \"Awesome, appreciate it.\" [[quick thanks, then go]] \"So the reason I'm reaching out — we're offering a complimentary review of how you manage and secure your devices.\" [[unhurried]] \"In about 15 minutes we'll look at how you're handling it today, show you what's working for organizations with similar environments, and point out where you could simplify device management, take work off IT, and tighten security where it counts.\" [[that's the whole offer — no discovery]]"
+        },
+        {
+          "key": "curi",
+          "label": "Gut check",
+          "role": "Gut check",
+          "line": "\"Is that worth 15 minutes to see if there's anything there?\"",
+          "spoken": "\"Is that worth 15 minutes to see if there's anything there?\" [[stop talking — let them answer]]\n((if \"maybe\" → \"Totally fair. Worst case you get a couple ideas, best case we find something worth fixing — either way it's 15 minutes.\"))\n((if \"what did you see?\" → \"Nothing crazy — just enough to think it'd be worth a conversation.\" (then a sector line: education / healthcare / gov / multi-site — see the Consultation section)))\n((if \"we already have something\" → \"I'd be surprised if you didn't — most teams do. What are you running today?\"))"
+        },
+        {
+          "key": "ask",
+          "label": "Lock a time",
+          "role": "Lock a time",
+          "line": "\"Perfect, that's exactly why I reached out. Mornings or afternoons usually easier for you?\"",
+          "spoken": "\"Perfect, that's exactly why I reached out.\" [[warm]] \"Mornings or afternoons usually easier for you?\" [[lock the time]]\n((if \"just send info\" → \"Happy to — what'd actually be useful to see? Security, IT workload, or managing the devices? Might be faster to just show you on a quick call.\"))\n((if \"no time right now\" → \"No worries — that's the whole point of keeping it to 15. When's better, later this week?\"))"
+        }
+      ],
+      "handlesObjectionsInBeats": true,
+      "consultOffer": true
+    },
+    {
+      "id": "proofperm",
+      "tag": "Permission",
+      "visible": true,
+      "role": "Open · Proof + Permission",
+      "cue": "permission ★ proof ★ one question",
+      "line": "\"Hey **{name}**, **{you}** with IBM. Full transparency, this is a cold call. Can I steal 30 seconds to tell you why I called? If it is useless, you can tell me to buzz off. Appreciate it. I looked into **{company}** before I reached out, and saw a few things that made me think we could potentially help. We recently worked with a similar organization and cut device setup time from around 45 minutes to about 5. Is that something you have already solved, or is it still creating work for the team?\"",
+      "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM.\" [[simple]] \"Full transparency, this is a cold call.\" [[light tone]] \"Can I steal 30 seconds to tell you why I called? If it is useless, you can tell me to buzz off.\" [[stop, wait for yes]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "Discover",
+          "role": "If they answer",
+          "line": "\"Got it. Is that landing mostly on you, or does a broader team own it?\"",
+          "spoken": "\"Appreciate it.\" [[now earn the time]] \"I looked into **{company}** before I reached out, and saw a few things that made me think we could potentially help.\" [[researched]] \"We recently worked with a similar organization and cut device setup time from around 45 minutes to about 5.\" [[proof]]"
+        },
+        {
+          "key": "curi",
+          "label": "Create curiosity",
+          "role": "Create curiosity",
+          "line": "\"That is why I asked. The teams we help usually are not starting from zero. They already have tools, but still have gaps that create extra IT work or security risk.\"",
+          "spoken": "\"Is that something you have already solved, or is it still creating work for the team?\" [[one question, then silence]]\n((if they answer: \"Got it. Is that landing mostly on you, or does a broader team own it?\"))"
+        },
+        {
+          "key": "ask",
+          "label": "Close — ask for the meeting",
+          "role": "Ask for the meeting",
+          "line": "\"Might be worth **10 or 15 minutes** to compare notes. If it is not useful, you can tell me and we are done. Fair?\"",
+          "spoken": "\"That is why I asked.\" [[connect the dots]] \"Might be worth a quick **10 or 15 minutes** to compare notes. If it is not useful, you can tell me and we are done.\" [[low pressure]] \"Fair?\" [[stop]]"
+        }
+      ],
+      "card": {
+        "title": "Proof + Permission",
+        "text": "\"Hey {name}, {you} with IBM.\"\n\n\"Full transparency, this is a cold call.\"\n\n\"Can I steal 30 seconds to tell you why I called? If it’s useless, you can tell me to buzz off.\"\n\n\"Appreciate it. I looked into {company} before I reached out, and saw a few things that made me think we could potentially help.\"\n\n\"We recently worked with a similar organization and cut device setup time from around 45 minutes to about 5.\"\n\n\"Is that something you’ve already solved, or is it still creating work for the team?\"",
+        "note": "Best for execs, guarded prospects, or anyone who sounds skeptical right away.",
+        "proofRefs": [
+          "setup-45-5"
+        ]
+      },
+      "proofRefs": [
+        "setup-45-5"
+      ]
+    },
+    {
+      "id": "direct",
+      "tag": "Direct",
+      "visible": true,
+      "role": "Open · Direct — for busy people",
+      "cue": "then keep it moving →",
+      "line": "\"Hey **{name}**? **{you}** with IBM, I'll get right to it. With all the phones and laptops your team runs, what's eating the most time right now?\"",
+      "spoken": "\"Hey {name}? {you} with IBM, I'll get right to it.\" [[confident, brisk]] \"With all the phones and laptops your team runs, what's eating the most time right now?\" [[stop — let them answer, don't feed them options]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "Discover",
+          "role": "Discover",
+          "line": "\"Yeah, I hear that a lot. Roughly how much time does that eat in a week? And is it steady, or does it spike when you onboard someone or they walk out the door?\"",
+          "spoken": "\"Yeah, I hear that a lot.\" [[quick, confident]] \"Roughly how much time is that eating in a given week?\" [[let them put a number on it]] \"And is it pretty steady, or does it spike when you onboard someone new or somebody leaves?\" [[find the trigger — then stop]]"
+        },
+        {
+          "key": "curi",
+          "label": "Create curiosity",
+          "role": "Create curiosity",
+          "line": "\"Makes sense. The teams I work with that fix this usually claw back a chunk of that time and stop chasing the same tickets twice. Is that the kind of thing that'd actually move the needle for you?\"",
+          "spoken": "\"Makes sense.\" [[brisk]] \"The teams that actually fix this usually claw back a real chunk of that time — and stop chasing the same tickets over and over.\" [[concrete, not pitchy]] \"Is that the kind of thing that'd move the needle for you?\" [[pause]]"
+        },
+        {
+          "key": "ask",
+          "label": "Close — ask for the meeting",
+          "role": "Ask for the meeting",
+          "line": "\"That's actually why I called. Worth **10-15 minutes** to compare notes and see if we can take some of that off your plate?\"",
+          "spoken": "\"That's actually why I called.\" [[get to it]] \"Worth a quick **10 or 15 minutes** to compare notes and see if we can take some of that off your plate?\" [[stop, let them answer]]"
+        }
+      ]
+    },
+    {
+      "id": "casual",
+      "tag": "Casual",
+      "visible": true,
+      "role": "Open · Casual — most human",
+      "cue": "if right person →",
+      "line": "\"Hey **{name}**? It's **{you}** calling from IBM. Total cold call, full transparency. Real quick though, are you the person who deals with device management and security over there, or is that somebody else?\"",
+      "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} calling from IBM. Total cold call, full transparency here.\" [[grin, relaxed]] \"Real quick though—are you the person who deals with device management and security over there, or is that somebody else?\" [[let them route you]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "Discover",
+          "role": "Discover",
+          "line": "\"Perfect. So how are you guys handling all that today? Is that a daily kind of thing, or more of a once-in-a-while headache?\"",
+          "spoken": "\"Perfect.\" [[relaxed]] \"So how are you guys handling all that today?\" [[let them talk]] \"Gotcha. Is that a daily kind of thing, or more of a once-in-a-while headache?\" [[easy dig on frequency]] \"And is it mostly on you, or does the whole team touch it?\" [[then listen]]"
+        },
+        {
+          "key": "curi",
+          "label": "Create curiosity",
+          "role": "Create curiosity",
+          "line": "\"Gotcha. Honestly the funny thing is most people don't realize how much little stuff like that piles up until they actually add it all up one day. Ever feel like that?\"",
+          "spoken": "\"Gotcha.\" [[friendly]] \"Honestly, the funny thing is most people don't even clock how much all that little stuff adds up… until they sit down one day and actually tally it.\" [[light, relatable]] \"Ever get that feeling?\" [[pause]]"
+        },
+        {
+          "key": "ask",
+          "label": "Close — ask for the meeting",
+          "role": "Ask for the meeting",
+          "line": "\"Honestly that's why I called. Not sure we're even a fit yet, but might be worth **10-15 minutes** to compare notes. Crazy idea?\"",
+          "spoken": "\"Honestly, that's why I called.\" [[warm]] \"Not sure we're even a fit yet, but it might be worth a quick **10 or 15 minutes** to compare notes.\" [[easy]] \"Crazy idea?\" [[stop, let them answer]]"
+        }
+      ]
+    },
+    {
+      "id": "rec",
+      "tag": "Discovery",
+      "visible": true,
+      "role": "Open · Discovery",
+      "cue": "then stop talking →",
+      "line": "\"Hey **{name}**? **{you}** with IBM. I know I'm catching you out of the blue, so I'll be quick. When it comes to company devices, what's usually the biggest headache for your team these days? The manual setup and rollout work, supporting people when something breaks, or the security side?\"",
+      "spoken": "\"Hey… is this **{name}**?\" [[let them answer]] \"Hey {name}, this is {you}—I'm on the device management and security side over at IBM. I'll keep this quick, I promise.\" [[smile, slow down]] \"I'm actually just curious… when it comes to all your company devices, the phones, laptops, all that stuff… what's usually the biggest headache for your team right now? Is it more the manual setup work, supporting people when something breaks, or the security side?\" [[then zip it — let them pick a lane]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "Discover",
+          "role": "Discover",
+          "line": "\"Got it. How are you handling that today? And when it flares up, is it eating your time, IT's, or your users' too?\"",
+          "spoken": "\"Yeah… okay, that makes total sense.\" [[react first, genuine]] \"So how are you handling that today?\" [[let them explain]] \"Gotcha. And when it flares up, is that eating your time and IT's, or is it actually slowing your users down too?\" [[dig into who it hurts]] \"How often are you running into it?\" [[quantify — then really listen]]"
+        },
+        {
+          "key": "curi",
+          "label": "Create curiosity",
+          "role": "Create curiosity",
+          "line": "\"Makes sense. One thing I hear a lot is teams already have a tool, but still deal with manual work, mobile security, or support issues. Has any of that come up on your side?\"",
+          "spoken": "\"Yeah, I hear that a lot honestly.\" [[normalize it]] \"The funny thing is, most teams already have some tool in place… they just still end up stuck on the manual work, or the mobile security side, or all the support tickets.\" [[light, not pitchy]] \"Does any of that sound familiar on your end?\" [[pause]]"
+        },
+        {
+          "key": "ask",
+          "label": "Close — ask for the meeting",
+          "role": "Ask for the meeting",
+          "line": "\"Interesting. That's really why I called. I don't know if MaaS360 is relevant yet, but it might be worth **10-15 minutes** to compare notes. Would that be unreasonable?\"",
+          "spoken": "\"Okay, that's actually why I called.\" [[warm, low pressure]] \"Look, I honestly don't even know if MaaS360 is a fit for you yet… but based on what you just said, it might be worth a quick **10 or 15 minutes** to compare notes.\" [[slow down here]] \"Would that be unreasonable?\" [[stop — let them answer]]"
+        }
+      ],
+      "staticPlaceholder": {
+        "spokenDisc": "\"Yeah… okay, that makes total sense.\" [[react first, genuine]] \"So how are you guys handling that today?\" [[let them explain, don't jump in]] \"Gotcha. And is that mostly a headache for you and IT, or is it starting to hit your users too?\" [[one follow-up, then listen]]",
+        "note": "Text the old page shipped in its HTML before its script swapped in the Proof opener on load. Never visible; kept so nothing is dropped."
+      }
+    },
+    {
+      "id": "proofconsult",
+      "tag": "Proof + Consult ★",
+      "visible": false,
+      "role": "Open · Proof + Consult",
+      "cue": "research ★ consult invite ★ ask",
+      "line": "\"Hey **{name}**, **{you}** with IBM, calling from {city}. I'll keep this quick. I was looking into your company before I called, and honestly I saw enough to think this would be worth your time. We are setting aside time for a small number of organizations to compare how they are handling device management and security today. We have been finding ways to help teams reduce manual work, tighten security, and free up IT resources. Worth 15 minutes to see if there is anything there?\"",
+      "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} with IBM, calling from {city}. I'll keep this quick.\" [[grounded, human]] \"I was looking into your company before I called, and honestly I saw enough to think this would be worth your time.\" [[let it land]] \"We are setting aside time for a small number of organizations to compare how they are handling device management and security today.\" [[not a generic free review]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "Discover",
+          "role": "If they ask what it is",
+          "line": "\"It is simple. We compare how you are handling devices today, what is working, and where there may be room to tighten security or save IT time. No big pitch.\"",
+          "spoken": "\"We have been finding ways to help teams reduce manual work, tighten security, and free up IT resources.\" [[short value]] \"That is really the whole reason I reached out.\" [[no discovery spiral]]"
+        },
+        {
+          "key": "curi",
+          "label": "Create curiosity",
+          "role": "If they hesitate",
+          "line": "\"Totally fair. Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"",
+          "spoken": "\"Worth 15 minutes to see if there is anything there?\" [[stop]]\n((if they say maybe: \"Totally fair. Worst case, you get a couple ideas. Best case, we find something worth fixing. Either way, it is 15 minutes.\"))"
+        },
+        {
+          "key": "ask",
+          "label": "Close — ask for the meeting",
+          "role": "Lock a time",
+          "line": "\"Worth a quick look next week? Mornings or afternoons easier for you?\"",
+          "spoken": "\"If it is worth a look, great. If not, you will know pretty quickly.\" [[give the out]] \"Open to grabbing time next week?\" [[then lock mornings/afternoons]]"
+        }
+      ],
+      "sectorSet": "proofconsult",
+      "consultOffer": true,
+      "card": {
+        "title": "Proof + Consult",
+        "text": "\"Hey {name}, {you} with IBM, calling from {city}. I’ll keep this quick.\"\n\n\"I was looking into your company before I called, and honestly I saw enough to think this would be worth your time.\"\n\n\"We’re setting aside time for a small number of organizations to compare how they’re handling device management and security today.\"\n\n\"We’ve been finding ways to help teams reduce manual work, tighten security, and free up IT resources.\"\n\n\"Worth 15 minutes to see if there’s anything there?\"",
+        "note": "Use this when you want the cleanest path to a calendar invite. It avoids the vendor-ish \"free review\" language."
+      },
+      "note": "Defined in the old cockpit but never reachable from its UI. Kept for reference."
+    },
+    {
+      "id": "soft",
+      "tag": "Soft",
+      "visible": false,
+      "role": "Open · Soft — lowest pressure",
+      "cue": "if they stall → \"Are you even the right person for device stuff, or is that someone else?\"",
+      "line": "\"Hey **{name}**? **{you}** with IBM. I know you weren't expecting my call, so I'll keep it short. This might not even be relevant for you, but how's your team handling company devices these days?\"",
+      "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you}—I'm on the device management and security side at IBM. I know you weren't expecting my call, so I'll keep this really short.\" [[easy tone]] \"Honestly this might not even be relevant for you… but I was just curious how your team's handling company devices these days?\" [[soft landing, wait]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "Discover",
+          "role": "Discover",
+          "line": "\"Got it. Has that been pretty smooth, or is there one part that still bugs the team? And are you looking to change anything, or just living with it for now?\"",
+          "spoken": "\"Got it… no, that's helpful.\" [[gentle]] \"Has that been pretty smooth for you, or is there one part that still kind of bugs the team?\" [[let them vent a little]] \"And are you guys actively trying to fix that, or is it more of a 'we just live with it' thing right now?\" [[soft dig — then listen]]"
+        },
+        {
+          "key": "curi",
+          "label": "Create curiosity",
+          "role": "Create curiosity",
+          "line": "\"Yeah, that comes up a lot. Usually it's not the tool itself, it's the stuff falling through the cracks between what it does and what the team actually needs. Sound familiar at all?\"",
+          "spoken": "\"Yeah, that comes up a lot actually.\" [[easy tone]] \"And honestly, usually it's not even the tool that's the problem — it's the stuff that slips through the cracks between what it does and what the team actually needs day to day.\" [[soft, not salesy]] \"Sound familiar at all?\" [[wait]]"
+        },
+        {
+          "key": "ask",
+          "label": "Close — ask for the meeting",
+          "role": "Ask for the meeting",
+          "line": "\"No pressure either way, but it might be worth a quick **10-15 minutes** to compare notes. Worth a look?\"",
+          "spoken": "\"No pressure either way here, honestly.\" [[reassure]] \"But it might be worth a quick **10 or 15 minutes** just to compare notes and see if there's anything useful.\" [[soft landing]] \"Worth a look?\" [[stop, let them answer]]"
+        }
+      ],
+      "note": "Defined in the old cockpit but never reachable from its UI. Kept for reference."
+    },
+    {
+      "id": "plain",
+      "tag": "Plain",
+      "visible": false,
+      "role": "Open · Plain — no jargon",
+      "cue": "keep it everyday →",
+      "line": "\"Hey **{name}**? **{you}** with IBM. I won't take much of your time. For the phones and laptops your team uses for work, who's usually the one setting those up and keeping them safe?\"",
+      "spoken": "\"Hey… is this **{name}**?\" [[let them answer]] \"Hey {name}, {you} here with IBM. I won't take much of your time.\" [[friendly, easy]] \"So real quick… for the phones and laptops your team uses for work, who's the person that usually handles setting those up and keeping them safe?\" [[then let them answer]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "Discover",
+          "role": "Discover",
+          "line": "\"Okay, gotcha. And when something goes wrong, like a lost phone or someone can't log in, how does that usually get sorted out? Quick fix, or a whole afternoon?\"",
+          "spoken": "\"Okay, got it.\" [[no jargon]] \"And when something goes sideways… like a phone gets lost, or somebody can't get into their email… how does that usually get sorted out?\" [[let them walk you through it]] \"Is that normally a quick fix, or does it turn into a whole afternoon?\" [[dig into the real pain — then listen]]"
+        },
+        {
+          "key": "curi",
+          "label": "Create curiosity",
+          "role": "Create curiosity",
+          "line": "\"Yeah, that's super common. Most places just want it so a new person's laptop is ready on day one, and a lost phone isn't a fire drill. Would that kind of thing make your life easier?\"",
+          "spoken": "\"Yeah, that's super common honestly.\" [[reassure]] \"Most places I talk to just want the simple stuff to be simple — a new hire's laptop ready on day one, and a lost phone not turning into a whole fire drill.\" [[keep it plain, paint the picture]] \"Would that kind of thing make your life easier?\" [[pause]]"
+        },
+        {
+          "key": "ask",
+          "label": "Close — ask for the meeting",
+          "role": "Ask for the meeting",
+          "line": "\"That's really why I called. Might be worth a quick **10 or 15 minutes** just to walk through it. That sound alright?\"",
+          "spoken": "\"That's really why I gave you a call.\" [[warm]] \"Might be worth a quick **10 or 15 minutes** just to show you what I mean and see if it even fits.\" [[easy]] \"That sound alright?\" [[stop, let them answer]]"
+        }
+      ],
+      "note": "Defined in the old cockpit but never reachable from its UI. Kept for reference."
+    },
+    {
+      "id": "proof",
+      "tag": "Proof",
+      "visible": false,
+      "role": "Open · Proof — lead with a result",
+      "cue": "proof → value → one question",
+      "line": "\"Hey **{name}**? **{you}** with IBM. I'll be quick. We just helped **a government IT team about your size** **go from 45 minutes to set up a new device down to about 5**, and I figured it might be worth a look for {company} too. How are you handling all your work phones and laptops today?\"",
+      "spoken": "\"Hey… is this **{name}**?\" [[let them answer]] \"Hey {name}, it's {you} with IBM. I'll get right to it.\" [[warm, confident]] \"So the reason I'm calling — we just helped **a government IT team about your size** **go from 45 minutes to stand up a new device down to about 5**, and claw back around **50 IT hours a month**.\" [[swap in your own customer + number if you've got one approved]] \"Basically an easier handle on all their work phones and laptops. Less manual setup, tighter security on the stuff that matters.\" [[brief pause — that was your proof]] \"I figured it might be worth a look for {company} too. How are you guys handling that today?\" [[then stop — let them answer]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "Discover",
+          "role": "Discover",
+          "line": "\"Yeah, makes sense. Where's the gap for you — more the rollout and setup side, or keeping everything locked down after? And how far off is that from where you'd want it?\"",
+          "spoken": "\"Yeah, makes sense — that's helpful.\" [[react genuine]] \"Where's the gap for you honestly — is it more the rollout and getting people set up, or locking everything down and keeping it secure after?\" [[two lanes, not three]] \"And how far off is that from where you'd actually want it to be?\" [[frame it against the result you named — then listen]]"
+        },
+        {
+          "key": "curi",
+          "label": "Create curiosity",
+          "role": "Create curiosity",
+          "line": "\"That's exactly what that customer was dealing with. And the reason it worked is we didn't rip anything out, we just closed the gaps around what they already had. Does that line up with your setup?\"",
+          "spoken": "\"Yeah, that's exactly what that customer was wrestling with too honestly.\" [[confident, not salesy]] \"And the reason it actually worked — we didn't rip anything out on them, we just closed the gaps around what they already had running.\" [[tie it straight back to the result you named]] \"Does that line up with how your setup looks?\" [[pause]]"
+        },
+        {
+          "key": "ask",
+          "label": "Close — ask for the meeting",
+          "role": "Ask for the meeting",
+          "line": "\"That's really why I called. Might be worth **10-15 minutes** to compare what you're doing today against where we usually help. Open to it?\"",
+          "spoken": "\"That's really why I gave you a call.\" [[warm]] \"Might be worth a quick **10 or 15 minutes** just to compare what you're doing today against where we usually help. If it's not relevant, you tell me and we're done.\" [[low pressure, honest]] \"Open to it?\" [[stop — let them answer]]"
+        }
+      ],
+      "sectorSet": "proof",
+      "note": "Defined in the old cockpit but never reachable from its UI. Kept for reference.",
+      "proofRefs": [
+        "setup-45-5"
+      ]
+    },
+    {
+      "id": "best",
+      "tag": "Best ★",
+      "visible": false,
+      "role": "Open · Best — permission + reason",
+      "cue": "get the yes → give the reason → one question",
+      "line": "\"Hey **{name}**? **{you}** with IBM. We've never spoken, so full honesty, this is a cold call. Can I have 30 seconds to tell you why I called, and then you can tell me to buzz off? [wait for yes] Appreciate it. The reason I called — teams your size keep telling me their work phones and laptops eat up way more time and risk than they should. We've actually helped some cut new-device setup from 45 minutes down to about 5. Didn't know if that's on your radar, or if you've got it handled?\"",
+      "spoken": "\"Hey, is this **{name}**?\" [[let them answer]] \"So, we've never actually talked — full honesty, this is a cold call.\" [[say it light, almost smiling]] \"Can I steal 30 seconds to tell you why I called? If it's useless, tell me to buzz off.\" [[STOP. wait for the yes — this is the whole move.]] \"Appreciate it. So I talk to a lot of teams around your size, and the same thing keeps coming up — their work phones and laptops eat way more time and risk than they should.\" [[calm, curious — not excited]] \"Didn't know if that's on your radar, or if you've already got it handled?\" [[then zip it]]",
+      "beats": [
+        {
+          "key": "disc",
+          "label": "Discover",
+          "role": "Discover",
+          "line": "\"Right, okay. Is that landing mostly on you, or is there a whole team on it? And honestly, is fixing it a priority this year, or more of a someday thing?\"",
+          "spoken": "\"Right, okay — that's helpful.\" [[genuine]] \"Is that landing mostly on you, or do you've got a whole team on it?\" [[size up who owns it]] \"And be honest with me — is actually fixing this a priority this year, or is it more of a someday, when-we-get-to-it thing?\" [[find the timing — then really listen]]"
+        },
+        {
+          "key": "curi",
+          "label": "Create curiosity",
+          "role": "Create curiosity",
+          "line": "\"Yeah, that's the pattern I keep running into. The part that bites people is usually the stuff you don't see coming, a device walks out the door, or you get asked to prove everything's locked down and it's a scramble. That ever a worry on your end?\"",
+          "spoken": "\"Yeah, honestly that's the pattern I keep running into.\" [[calm, not salesy]] \"The part that usually bites people is the stuff they don't see coming — a device walks out the door with someone, or they get asked to prove everything's locked down and it turns into a scramble.\" [[name the risk they haven't said yet]] \"Is that ever a worry on your end?\" [[pause]]"
+        },
+        {
+          "key": "ask",
+          "label": "Close — ask for the meeting",
+          "role": "Ask for the meeting",
+          "line": "\"That's really why I called. Might be worth **10-15 minutes** to compare what you do today with where we usually help. If it's not a fit, you tell me. Fair?\"",
+          "spoken": "\"That's really why I gave you a call.\" [[low pressure]] \"Might be worth a quick **10 or 15 minutes** just to compare what you're doing today against where we usually help. And if it's not a fit, you tell me and we're done, no weirdness.\" [[honest, easy]] \"Fair enough?\" [[stop — let them answer]]"
+        }
+      ],
+      "note": "Defined in the old cockpit but never reachable from its UI. Kept for reference.",
+      "proofRefs": [
+        "setup-45-5"
+      ]
+    }
+  ],
+  "engageTips": [
+    "Personalize the sector, then talk like a human",
+    "One question, then silence",
+    "Proof is a reason to care, not a pitch"
+  ],
+  "noJump": "🛑 They pushed back or said no? Jump to the No playbook",
+  "starters": [
+    {
+      "id": "headache",
+      "label": "Biggest Headache",
+      "line": "\"When it comes to company devices, what's usually the biggest headache for your team these days?\"",
+      "notes": [
+        "Follow-up: \"Interesting. What makes that part a pain?\"",
+        "Then bridge: \"Yeah, that comes up a lot. Worth 10 min to compare notes?\""
+      ]
+    },
+    {
+      "id": "teams",
+      "label": "Most IT Teams",
+      "line": "\"Out of these three, what gets the most attention: device security, manual work, or support tickets?\"",
+      "notes": [
+        "Setup: \"Most IT teams I talk to already have something in place.\"",
+        "Follow-up: \"Got it, what's driving that being the priority right now?\""
+      ]
+    },
+    {
+      "id": "magic",
+      "label": "Magic Wand",
+      "line": "\"If you could wave a magic wand and fix one thing around device management, what would it be?\"",
+      "notes": [
+        "Follow-up: \"How long has that been a thorn in the side?\"",
+        "Then bridge: \"That's exactly the kind of thing we poke at. Quick look next week?\""
+      ]
+    },
+    {
+      "id": "relevant",
+      "label": "Maybe Not Relevant",
+      "line": "\"How are you handling employee-owned devices today?\"",
+      "notes": [
+        "Setup: \"This may not even be relevant for you, but I was curious.\"",
+        "Follow-up: \"Has that worked pretty well, or is BYOD still a bit of a headache?\""
+      ]
+    },
+    {
+      "id": "understand",
+      "label": "Help Me Understand",
+      "line": "\"How does your team manage phones, tablets, and laptops today?\"",
+      "notes": [
+        "Setup: \"Help me understand something.\""
+      ]
+    }
+  ],
+  "interrupts": [
+    {
+      "id": "wrong",
+      "label": "Maybe I'm Wrong",
+      "line": "\"Are mobile devices becoming more of a security conversation for you guys lately?\"",
+      "notes": [
+        "Setup: \"Maybe I'm completely off here.\""
+      ]
+    },
+    {
+      "id": "dumb",
+      "label": "Dumb Question",
+      "line": "\"Who actually owns device management over there?\"",
+      "notes": [
+        "Setup: \"This might be a dumb question.\""
+      ]
+    },
+    {
+      "id": "curious",
+      "label": "Curiosity",
+      "line": "\"Roughly how many devices are you managing these days?\"",
+      "notes": [
+        "Setup: \"Out of curiosity.\""
+      ]
+    },
+    {
+      "id": "different",
+      "label": "Everyone's Different",
+      "line": "\"How are you guys approaching device management today?\"",
+      "notes": [
+        "Setup: \"Every company seems to handle this differently.\""
+      ]
+    },
+    {
+      "id": "heard",
+      "label": "Heard This Before",
+      "line": "\"Has manual device work come up for your team at all?\"",
+      "notes": [
+        "Setup: \"One thing I keep hearing is IT teams spend too much time on device work.\""
+      ]
+    }
+  ],
+  "openingScripts": {
+    "defaultScript": {
+      "line": "\"Hey {name}?\"\n\n[[wait for them]]\n\n\"Hey, this is {you} with IBM. I know I'm catching you out of the blue, so I'll be quick. When it comes to company devices, what's usually the biggest headache for your team? Setup, security, support tickets, or something else?\"",
+      "note": "Say it slowly, then stop talking. Make it easy to answer."
+    },
+    "tabs": [
+      {
+        "id": "simple",
+        "label": "Simple",
+        "line": "\"How are you guys handling device management today?\"",
+        "tags": [
+          "default",
+          "natural"
+        ],
+        "notes": [
+          "Use after: \"Hey {name}? {you} with IBM. I'll be quick.\"",
+          "If they name a tool: \"Got it. How has that been for you overall?\""
+        ]
+      },
+      {
+        "id": "it",
+        "label": "IT Director",
+        "line": "\"With all the devices your team supports, what's the bigger headache right now? Setup, security, or support tickets?\"",
+        "tags": [
+          "IT",
+          "workload"
+        ],
+        "notes": [
+          "If they pick one: \"Yeah, I hear that a lot. What makes that part painful?\""
+        ]
+      },
+      {
+        "id": "security",
+        "label": "Security",
+        "line": "\"Are mobile devices and BYOD a security priority for your team, or is that handled somewhere else?\"",
+        "tags": [
+          "security",
+          "risk"
+        ],
+        "notes": [
+          "If they engage: \"Is the biggest concern risk, compliance, or keeping work data protected?\""
+        ]
+      },
+      {
+        "id": "exec",
+        "label": "Executive",
+        "line": "\"For your team this year, is reducing device risk or reducing manual IT work the bigger priority?\"",
+        "tags": [
+          "exec",
+          "business"
+        ],
+        "notes": [
+          "Keep it high-level: risk, time, user productivity."
+        ]
+      },
+      {
+        "id": "unknown",
+        "label": "Wrong Person",
+        "line": "\"Who usually owns device management or mobile security on your side?\"",
+        "tags": [
+          "route",
+          "safe"
+        ],
+        "notes": [
+          "Use after: \"You might not be the right person.\"",
+          "If they give a name: \"Would it be weird if I mentioned you pointed me the right way?\""
+        ]
+      },
+      {
+        "id": "soft",
+        "label": "Soft",
+        "line": "\"Hey {name}? {you} with IBM. I know you weren't expecting my call, so I'll keep it short. This might not even be relevant for you, but how's your team handling company devices these days?\"",
+        "tags": [
+          "lowest pressure",
+          "guarded prospect"
+        ],
+        "notes": [
+          "If they open up: \"Got it. Has that been pretty smooth, or is there a part that still bugs the team?\"",
+          "If they stall: \"No worries. Are you even the right person for device stuff, or is that someone else?\""
+        ]
+      },
+      {
+        "id": "direct",
+        "label": "Direct",
+        "line": "\"Hey {name}? {you} with IBM. I'll be quick, I promise. When it comes to managing all your company's phones and laptops, what usually eats up the most time for your team?\"",
+        "tags": [
+          "busy prospect",
+          "concrete"
+        ],
+        "notes": [
+          "Follow-up: \"Yeah, I hear that a lot. Is that more on IT, or does it hit your users too?\"",
+          "Then bridge: \"That's actually why I called, worth 10-15 min to compare notes?\""
+        ]
+      },
+      {
+        "id": "casual",
+        "label": "Casual",
+        "line": "\"Hey {name}? It's {you} calling from IBM. Total cold call, full transparency. Real quick though, are you the person who deals with device management and security over there, or is that somebody else?\"",
+        "tags": [
+          "most human",
+          "routes fast"
+        ],
+        "notes": [
+          "If yes: \"Perfect. Quick one then, how are you guys handling all that today?\"",
+          "If no: \"No worries, who should I be talking to? Would it be weird if I said you pointed me their way?\""
+        ]
+      }
+    ]
+  },
+  "discover": {
+    "lead": "One question, one insight, one ask. Ask, react, dig once, then move on. These are the three things worth finding out on a cold call.",
+    "questions": [
+      {
+        "n": 1,
+        "title": "Is the problem real?",
+        "meddpicc": "Implicate the Pain",
+        "line": "Makes sense. One thing I hear a lot is teams already have a tool, but still deal with manual work, mobile security, or support issues. Has any of that come up on your side?",
+        "source": "Discovery opener · Create curiosity",
+        "why": "Share one pattern: \"A lot of teams already have a tool. The gaps are usually manual work, mobile security, or support.\"",
+        "strong": "They mention a pain point",
+        "weak": "They only say \"send info\" and give nothing else"
+      },
+      {
+        "n": 2,
+        "title": "What does it cost them?",
+        "meddpicc": "Pain + Metrics",
+        "line": "Yeah, I hear that a lot. Roughly how much time does that eat in a week? And is it steady, or does it spike when you onboard someone or they walk out the door?",
+        "source": "Direct opener · Discover",
+        "why": "Any number in any unit is a win: hours a week, tickets, people.",
+        "strong": "They give a number, or say when it spikes.",
+        "weak": "\"Hard to say.\" Move on; never push a stranger for a number."
+      },
+      {
+        "n": 3,
+        "title": "Do they own it?",
+        "meddpicc": "Champion",
+        "line": "Who usually owns device management or mobile security on your side?",
+        "source": "Opening Script · Wrong Person",
+        "why": "Skip it if the first two already earned the meeting.",
+        "strong": "They give a stakeholder name",
+        "weak": "They won't identify an owner"
+      }
+    ],
+    "formula": [
+      {
+        "step": "1. React",
+        "title": "Make them feel heard",
+        "line": "\"Got it.\" · \"That makes sense.\" · \"I hear that a lot.\""
+      },
+      {
+        "step": "2. Dig",
+        "title": "One easy follow-up",
+        "line": "\"How has that been working?\" · \"What makes that frustrating?\" · \"IT or users?\""
+      },
+      {
+        "step": "3. Curiosity",
+        "title": "Share one pattern",
+        "line": "\"A lot of teams already have a tool. The gaps are usually manual work, mobile security, or support.\""
+      },
+      {
+        "step": "4. Ask",
+        "title": "Sell the next step",
+        "line": "\"I don't know if MaaS360 is relevant yet. Would 10-15 minutes be unreasonable?\""
+      }
+    ],
+    "responsesTitle": "What Did They Say?",
+    "responses": [
+      {
+        "label": "Names a tool",
+        "line": "\"Got it, most teams I speak with already have something. How has **[Intune / Jamf / Workspace ONE]** been working overall?\"",
+        "then": "\"Is there one part the team still complains about?\"",
+        "goes": "Listen for: Competition"
+      },
+      {
+        "label": "Happy / \"we're good\"",
+        "line": "\"Totally fair, I'd be surprised if you didn't. Is it smooth across the board, or is there one area the team still gripes about? Even good tools have a weak spot.\"",
+        "goes": "Pain"
+      },
+      {
+        "label": "Manual / messy",
+        "line": "\"That sounds like a lot to keep track of. Is the painful part the **setup**, the **security** side, or **supporting users** after the fact?\"",
+        "then": "\"How do you handle it when someone's remote or offsite?\"",
+        "goes": "Pain"
+      },
+      {
+        "label": "Mentions a pain",
+        "line": "\"How are you handling that today? And is that more of a headache for **IT**, or is it starting to hit your **end users** too?\"",
+        "goes": "Pain · Metrics"
+      },
+      {
+        "label": "Wrong person",
+        "line": "\"No worries. Who's closest to device management or mobile security on your side?\"",
+        "then": "\"Would it be weird if I mentioned you pointed me the right way?\"",
+        "goes": "Champion"
+      }
+    ],
+    "meddpicc": {
+      "ask": [
+        {
+          "k": "Implicate the Pain (I)",
+          "t": "Setup time, security gaps, or support load. Get them to say it in their words."
+        },
+        {
+          "k": "Champion (C)",
+          "t": "Do they own device management or mobile security, or who does?"
+        }
+      ],
+      "capture": [
+        {
+          "k": "Metrics (M)",
+          "t": "Device count, hours a week, tickets. Write down any number they give."
+        },
+        {
+          "k": "Economic Buyer (E)",
+          "t": "Any name or title they mention. Never ask \"are you the decision maker?\""
+        },
+        {
+          "k": "Competition (C)",
+          "t": "What they run today (listen for {incumbentList}). Often the real competition is doing nothing."
+        }
+      ],
+      "later": [
+        {
+          "k": "Decision Criteria (D)",
+          "t": "Belongs in the 15-minute meeting, not the cold call."
+        },
+        {
+          "k": "Decision Process (D)",
+          "t": "Same. Asking now invites \"we're not looking at anything.\""
+        },
+        {
+          "k": "Paper Process (P)",
+          "t": "Legal, procurement, security review: all later."
+        }
+      ]
+    },
+    "dontAsk": {
+      "rows": [
+        {
+          "dont": "Are you the decision maker?",
+          "why": "It offends them or gets a defensive yes.",
+          "instead": "\"Who usually owns device management or mobile security on your side?\""
+        },
+        {
+          "dont": "Do you have budget for this?",
+          "why": "There is nothing to budget for yet.",
+          "instead": "Don't raise it. If they do, use the \"No budget\" card."
+        },
+        {
+          "dont": "Five discovery questions in a row",
+          "why": "Do not ask five questions in a row.",
+          "instead": "One question, then listen."
+        },
+        {
+          "dont": "\"Let me know\"",
+          "why": "Do not end with \"let me know\".",
+          "instead": "\"Perfect. Are mornings or afternoons usually easier for you?\""
+        }
+      ]
+    },
+    "ai": {
+      "text": "Build your pain hypothesis before you dial.",
+      "prompt": "For a {role} at {type}, give me a one-line pain hypothesis about device management and mobile security, then three cold-call questions: is the problem real, what does it cost, who owns it."
+    }
+  },
+  "explore": {
+    "steps": [
+      {
+        "n": "1 · Acknowledge",
+        "t": "Agree fast. It tells them you have heard this before and it did not end the call."
+      },
+      {
+        "n": "2 · Explore",
+        "t": "One question to find what is underneath. Ask it, then stop talking."
+      },
+      {
+        "n": "3 · Continue",
+        "t": "Point the next line at Pain, Metrics, or the owner. Never fight it."
+      }
+    ],
+    "consultIntro": "These are the objections that come up **specifically** when you offer a free review. The move is always the same: **agree fast, reframe the review as low-risk and about them, then re-ask for the 15 minutes.**",
+    "consultPointer": "**The verbatim Consult Short script now lives up top — tap **Consult Short ★** in Say It Out Loud.** This section is just the deeper reference: detailed objection catches and the scripts to lock the meeting, leave a voicemail, and send the follow-up email.",
+    "ai": {
+      "text": "Prep objection handling for this account.",
+      "prompt": "Give me acknowledge / explore / continue lines for a {role} at {company} pushing back on IBM MaaS360. Likely incumbents: {incumbentList}."
+    }
+  },
+  "objections": [
+    {
+      "id": "about",
+      "q": "What's this about?",
+      "openers": [],
+      "ack": "Fair question.",
+      "explore": "I work with teams on managing and securing company devices. I was really just trying to understand how you guys handle that today.",
+      "cont": "Are you close to that, or is that someone else?",
+      "goes": "Champion",
+      "industries": []
+    },
+    {
+      "id": "send-info",
+      "q": "Send me an email",
+      "aliases": [
+        "Just send me info",
+        "Just send me an email",
+        "Just send me some info"
+      ],
+      "openers": [],
+      "ack": "Happy to.",
+      "explore": "Just so I don't send you something generic, are you using anything today for device management?",
+      "cont": "The email makes more sense with 10 min of context. Crazy to compare notes next week?",
+      "goes": "Pain · Listen for: Competition",
+      "alts": [
+        {
+          "source": "Quick catch (Say It Out Loud)",
+          "line": "\"Happy to — what'd actually be useful? Security, IT workload, or managing the devices?\" [[then →]] \"Honestly might be faster to just show you on a quick call.\" [[re-ask]]"
+        },
+        {
+          "source": "When They Say No",
+          "line": "\"Happy to. So I don't send you something generic — what's the one thing that'd actually be useful to see?\"",
+          "then": "get a morsel of discovery, then send something specific"
+        },
+        {
+          "source": "Consult offer",
+          "line": "\"Happy to. So I don't send you a generic overview though — what's the one area you'd actually want to see? Security, setup time, or support load? The review's basically that, just live and quicker.\"",
+          "then": "then → \"Honestly might be faster to grab 15 minutes. Worth it?\"",
+          "openers": [
+            "consult",
+            "consultshort",
+            "proofconsult"
+          ]
+        }
+      ],
+      "industries": []
+    },
+    {
+      "id": "have-something",
+      "q": "We already have something",
+      "aliases": [
+        "We've already got this handled",
+        "We already have this handled"
+      ],
+      "openers": [],
+      "ack": "Makes sense, most teams I call already do.",
+      "explore": "Is it working smoothly, or is there one part the team still complains about?",
+      "cont": "What are you running today?",
+      "contSource": "Quick catch (Say It Out Loud)",
+      "then": "find the gap",
+      "goes": "Pain · Listen for: Competition",
+      "alts": [
+        {
+          "source": "Quick catch (Say It Out Loud)",
+          "line": "\"I'd be surprised if you didn't — most teams do. The ones who still take the call are just curious what they might be missing.\" [[then →]] \"What are you running today?\" [[let them talk]]"
+        },
+        {
+          "source": "When They Say No",
+          "line": "\"Makes sense, most teams I call already have something. Is it working smoothly across the board, or is there one part the team still gripes about?\"",
+          "then": "find the gap, or exit clean with a follow-up date"
+        },
+        {
+          "source": "Consult offer",
+          "line": "\"Makes sense, most teams I talk to do. That's actually who the review is best for — not to rip anything out, just a second set of eyes on where the gaps might be. Out of curiosity, what are you running today?\"",
+          "then": "then → \"What's the one thing the team still gripes about?\"",
+          "openers": [
+            "consult",
+            "consultshort",
+            "proofconsult"
+          ]
+        }
+      ],
+      "industries": []
+    },
+    {
+      "id": "not-interested",
+      "q": "Not interested",
+      "openers": [],
+      "ack": "Totally fair.",
+      "explore": "Usually that means timing is off, you already have something that works, or I caught the wrong person. Which one is it?",
+      "cont": "Can I ask, is it that you've already got this handled, or just that it's not a priority right now?",
+      "contSource": "When They Say No · type 2",
+      "then": "learn why or exit clean",
+      "goes": "Pain · Listen for: Competition",
+      "seeAlso": "no-2",
+      "industries": []
+    },
+    {
+      "id": "no-budget",
+      "q": "No budget",
+      "openers": [],
+      "ack": "Makes sense. I'm not calling to ask you to buy anything today.",
+      "explore": "Would it still be useful to know what's out there so you're not starting from scratch later?",
+      "cont": "No hard pitch. Just 10 minutes to see if there's anything useful.",
+      "contSource": "Meeting Ask Library · Soft",
+      "then": "low pressure meeting",
+      "goes": "Pain",
+      "industries": []
+    },
+    {
+      "id": "bad-time",
+      "q": "Bad time",
+      "openers": [],
+      "ack": "No worries, I caught you in the middle of something.",
+      "explore": "Should I try later today, or is tomorrow morning better?",
+      "then": "get a callback window",
+      "goes": "Listen for: timing",
+      "seeAlso": "no-1",
+      "industries": [],
+      "noContinue": "Old card had no spoken continue line; the \"then\" note is the next step."
+    },
+    {
+      "id": "cost",
+      "q": "How much does it cost?",
+      "openers": [],
+      "ack": "It depends on the number of devices and what you actually need, so I don't want to throw out a random number.",
+      "explore": "Roughly how many users or devices would this apply to?",
+      "then": "qualify, then book",
+      "goes": "Metrics",
+      "industries": [],
+      "noContinue": "Old card had no spoken continue line; the \"then\" note is the next step."
+    },
+    {
+      "id": "not-right-person",
+      "q": "I'm not the right person",
+      "aliases": [
+        "Not the right person"
+      ],
+      "openers": [],
+      "ack": "\"No worries at all — that actually helps.\" [[stay easy]]",
+      "explore": "\"Who usually owns device management and security over there? I'll reach out to them directly.\" [[get the name, then thank them]]",
+      "cont": "Would it be weird if I mentioned you pointed me the right way?",
+      "contSource": "What Did They Say · Wrong person",
+      "goes": "Champion · Listen for: Economic Buyer",
+      "alts": [
+        {
+          "source": "Consult offer",
+          "line": "\"No worries at all. Who usually owns device management or security on your side? I'll bring the review to them — and would it be weird if I mentioned you pointed me their way?\"",
+          "then": "then → get the name + warm intro",
+          "openers": [
+            "consult",
+            "consultshort",
+            "proofconsult"
+          ]
+        }
+      ],
+      "industries": []
+    },
+    {
+      "id": "dnc",
+      "q": "Please don't call again",
+      "openers": [],
+      "exit": true,
+      "ack": "Understood. I'll make a note and won't call again. Appreciate your time.",
+      "then": "then actually stop — log it, no follow-up",
+      "goes": "Exit cleanly · log it",
+      "industries": []
+    },
+    {
+      "id": "why-free",
+      "q": "What's the catch? Why free?",
+      "openers": [
+        "consult",
+        "consultshort",
+        "proofconsult"
+      ],
+      "ack": "No catch, honestly.",
+      "explore": "We do a handful of these because it's the easiest way to show a team where we can actually help. If there's a fit, great, we keep talking. If not, you still walk away knowing where you stand. No cost either way.",
+      "cont": "So — worth 15 minutes next week?",
+      "then": "then → \"So — worth 15 minutes next week?\"",
+      "goes": "Champion",
+      "industries": []
+    },
+    {
+      "id": "sales-pitch",
+      "q": "Is this just a sales pitch?",
+      "openers": [
+        "consult",
+        "consultshort",
+        "proofconsult"
+      ],
+      "ack": "Fair to ask.",
+      "explore": "It's not a pitch, it's a review. First 15 minutes is us learning how you handle devices today. If there's something worth exploring, I'll say so. If there's not, I'll tell you that too. Either way you get value out of it.",
+      "cont": "That fair?",
+      "then": "then → \"That fair?\"",
+      "goes": "Pain",
+      "industries": []
+    },
+    {
+      "id": "no-time",
+      "q": "I don't have time for a meeting",
+      "openers": [
+        "consult",
+        "consultshort",
+        "proofconsult"
+      ],
+      "ack": "Totally get it.",
+      "explore": "That's why I kept it to 15 minutes, not an hour. If it's not useful in the first five, you can kick me off the call. When's usually calmer for you, mornings or later in the week?",
+      "then": "then → get a specific window",
+      "goes": "Listen for: timing",
+      "industries": [],
+      "noContinue": "Old card had no spoken continue line; the \"then\" note is the next step."
+    },
+    {
+      "id": "not-changing",
+      "q": "We're not looking to change anything",
+      "openers": [
+        "consult",
+        "consultshort",
+        "proofconsult"
+      ],
+      "ack": "Totally fair, and the review isn't about switching anything.",
+      "explore": "It's just a snapshot of where you're strong and where there might be some easy wins. No pressure to do a thing with it. Worth a look while it's free?",
+      "then": "then → if still no, get a follow-up date",
+      "goes": "Pain",
+      "industries": [],
+      "noContinue": "Old card had no spoken continue line; the \"then\" note is the next step."
+    },
+    {
+      "id": "why-us",
+      "q": "Why us? How'd you find me?",
+      "openers": [
+        "consult",
+        "consultshort",
+        "proofconsult"
+      ],
+      "ack": "Honest answer — I look at teams around your size and industry that tend to deal with a lot of device and security work, and yours stood out.",
+      "explore": "That's the whole reason I picked up the phone.",
+      "cont": "That's why I figured the 15 minutes was worth it.",
+      "then": "then → back to the ask: \"That's why I figured the 15 minutes was worth it.\"",
+      "goes": "Pain",
+      "industries": []
+    }
+  ],
+  "noPlaybook": {
+    "title": "When They Say No",
+    "intro": "\"No\" isn't one thing — there are **three**, and each gets handled differently. Your only real loss is hanging up with **nothing**. Walk away with a callback, a reason, or permission to follow up.",
+    "hint": "convert every no → a time, a reason, or a next touch",
+    "types": [
+      {
+        "id": "no-1",
+        "n": 1,
+        "q": "\"No\" to the 30 seconds",
+        "kind": "permission no",
+        "line": "Totally fair, I caught you cold. Worst case — when's a better time to try you, later today or tomorrow morning?",
+        "then": "don't push into the pitch — just book the callback and go",
+        "spoken": "\"Totally fair, I caught you completely cold.\" [[no pushback, agree fast]] \"Worst case — when's actually a better time to try you? Later today, or is tomorrow morning easier?\" [[book it, thank them, hang up]]",
+        "spokenLabel": "No to the 30 seconds"
+      },
+      {
+        "id": "no-2",
+        "n": 2,
+        "q": "\"Not interested\"",
+        "kind": "early reflex",
+        "line": "Yeah, that's fair — I kind of expected that since I called you out of nowhere. Can I ask, is it that you've already got this handled, or just that it's not a priority right now?",
+        "then": "their answer tells you: real no vs. brush-off",
+        "spoken": "\"Yeah, honestly that's fair — I kind of expected that, I called you out of the blue.\" [[disarm, light]] \"Can I ask real quick — is it that you've already got this handled, or is it just not a priority right now?\" [[then shut up — the answer routes you]]",
+        "spokenLabel": "\"Not interested\""
+      },
+      {
+        "id": "no-3",
+        "n": 3,
+        "q": "\"No\" to the meeting",
+        "kind": "most important",
+        "line": "No problem at all. Before I let you go — what would need to change for this to be worth a look down the road?",
+        "then": "then pin it: \"Mind if I check back in a quarter? I'll send my info now.\"",
+        "spoken": "\"No problem at all, I appreciate you hearing me out.\" [[warm, zero pressure]] \"Before I let you go — what would need to change for this to even be worth a look down the road?\" [[listen, then pin the next step]] \"Cool — mind if I check back in a quarter? I'll shoot you a quick note now so you've got me.\" [[get the follow-up, not a dead end]]",
+        "spokenLabel": "No to the meeting"
+      }
+    ],
+    "tips": [
+      "A no to the meeting is a \"not now,\" not \"never\"",
+      "Never end on \"let me know\"",
+      "Leave with a time, a reason, or a next touch"
+    ]
+  },
+  "secure": {
+    "signals": [
+      {
+        "title": "They named it",
+        "t": "They put a device problem in their own words.",
+        "flags": [
+          "They name the current tool",
+          "They mention a pain point"
+        ]
+      },
+      {
+        "title": "They own it",
+        "t": "It sits with them, or they gave you the owner.",
+        "flags": [
+          "They give a stakeholder name"
+        ]
+      },
+      {
+        "title": "They leaned in",
+        "t": "They asked you something back.",
+        "flags": [
+          "They ask what MaaS360 does",
+          "They pick a time"
+        ]
+      }
+    ],
+    "threshold": {
+      "title": "Two of three, and you ask",
+      "t": "Don't stretch the call to finish a checklist. Ask for the 10-15 minutes."
+    },
+    "tiers": [
+      {
+        "id": "a3",
+        "head": "All three signals",
+        "verb": "just book it",
+        "asks": [
+          "default",
+          "direct",
+          "calendar-lock"
+        ],
+        "closes": [
+          "standard",
+          "lock"
+        ]
+      },
+      {
+        "id": "a2",
+        "head": "Two of three",
+        "verb": "sell the conversation first",
+        "asks": [
+          "curious",
+          "executive"
+        ],
+        "closes": [
+          "curious",
+          "exec"
+        ],
+        "consultOffer": true
+      },
+      {
+        "id": "a1",
+        "head": "One or none",
+        "verb": "take something smaller",
+        "asks": [
+          "soft"
+        ],
+        "closes": [
+          "soft"
+        ],
+        "noType": "no-3",
+        "email": true
+      }
+    ],
+    "consultOffer": {
+      "label": "Consult offer · complimentary 15-minute review",
+      "line": "So the reason I'm reaching out — we're offering a complimentary review of how you manage and secure your devices. In about 15 minutes we'll look at how you're handling it today, show you what's working for organizations with similar environments, and point out where you could simplify device management, take work off IT, and tighten security where it counts.",
+      "then": "Is that worth 15 minutes to see if there's anything there?",
+      "source": "Consult Short opener"
+    },
+    "asks": [
+      {
+        "id": "default",
+        "label": "Default",
+        "line": "\"Would 10-15 minutes to compare notes be unreasonable?\"",
+        "default": true,
+        "tier": 3
+      },
+      {
+        "id": "direct",
+        "label": "Direct",
+        "line": "\"Worth taking a quick look together next week?\"",
+        "default": false,
+        "tier": 3
+      },
+      {
+        "id": "curious",
+        "label": "Curious",
+        "line": "\"I'm not sure we're a fit yet. Would it make sense to compare notes?\"",
+        "default": false,
+        "tier": 2
+      },
+      {
+        "id": "executive",
+        "label": "Executive",
+        "line": "\"If there's a chance to save the team time, it's probably worth a short conversation.\"",
+        "default": false,
+        "tier": 2
+      },
+      {
+        "id": "soft",
+        "label": "Soft",
+        "line": "\"No hard pitch. Just 10 minutes to see if there's anything useful.\"",
+        "default": false,
+        "tier": 1
+      },
+      {
+        "id": "calendar-lock",
+        "label": "Calendar lock",
+        "line": "\"Perfect. Are mornings or afternoons usually easier for you?\"",
+        "default": false,
+        "tier": 3
+      }
+    ],
+    "closes": [
+      {
+        "id": "standard",
+        "label": "Standard",
+        "line": "\"I don't know if we have something useful yet. Based on what you mentioned, it feels worth a quick conversation. Would 10-15 minutes be unreasonable?\"",
+        "notes": [
+          "If yes: \"Perfect. Are mornings or afternoons easier?\""
+        ],
+        "tier": 3
+      },
+      {
+        "id": "curious",
+        "label": "Curiosity",
+        "line": "\"I'm not even sure MaaS360 is a fit yet. That's why I think a quick conversation would be useful. We compare what you do today against where we usually help. If it's not relevant, you tell me. Unreasonable?\"",
+        "tier": 2
+      },
+      {
+        "id": "exec",
+        "label": "Executive",
+        "line": "\"This may not turn into a project. But if there's a chance to reduce risk or take manual work off IT, it's probably worth a short look. Would 15 minutes next week be fair?\"",
+        "tier": 2
+      },
+      {
+        "id": "soft",
+        "label": "Soft No",
+        "line": "\"Totally fair. Before I let you go, what would need to change for this to be worth looking at later?\"",
+        "notes": [
+          "Then set a specific follow-up date, not \"sometime later.\""
+        ],
+        "tier": 1
+      },
+      {
+        "id": "lock",
+        "label": "Calendar Lock",
+        "line": "\"Perfect. I've got Tuesday at 2. What's the best email for the invite?\"\n\nAfter they answer: \"Great, I'm sending it while we're on the phone so I don't lose you.\"\n\nThen: \"Anyone else who should be included if we're talking device management or security?\"",
+        "tier": 3
+      }
+    ],
+    "lockIt": {
+      "title": "They said yes — lock it live",
+      "script": "\"Perfect. Mornings or afternoons easier for you next week?\"\n\nThen: \"What's the best email for the invite? I'll send it while we're on the phone so it doesn't slip.\"\n\nThen: \"Anyone else on your side who should sit in if we're talking devices and security?\"",
+      "note": "Send the invite while you're still on the call. Don't leave it as \"I'll follow up.\"",
+      "checklistTitle": "Meeting locked checklist",
+      "checklist": [
+        "Date and time confirmed",
+        "Correct email captured",
+        "Calendar invite sent while live",
+        "Other stakeholders asked about",
+        "Next step is clear"
+      ]
+    },
+    "flags": {
+      "green": [
+        "They name the current tool",
+        "They mention a pain point",
+        "They ask what MaaS360 does",
+        "They give a stakeholder name",
+        "They pick a time"
+      ],
+      "red": [
+        "They only say \"send info\" and give nothing else",
+        "They won't identify an owner",
+        "They're clearly trying to end the call",
+        "They ask not to be called again"
+      ]
+    },
+    "emailNote": "Use this when they say \"send me info.\" It matches the researched proof angle from the call, so the email does not feel generic.",
+    "consultEmail": {
+      "title": "Follow-up email",
+      "text": "**Subject:** the review I mentioned\n\nHey {name},\n\n{you} with IBM, tried you by phone. Quick recap: we're running a few complimentary device management and security reviews for teams that stood out, and yours was one.\n\nIt's 15 minutes, all focused on where you can tighten security and take work off IT. Worth grabbing time next week?\n\n{you} | IBM MaaS360 | {phone}",
+      "note": "Keep it short and tied to the same \"your team stood out\" hook."
+    },
+    "ai": {
+      "text": "Draft the follow-up while it is fresh.",
+      "prompt": "Draft a short follow-up email to a {role} at {company} about IBM MaaS360 using my call notes: [their words], [any number], [names], [what they use today]. End with one specific time for a 15-minute call."
+    }
+  },
+  "voicemail": {
+    "scripts": [
+      {
+        "id": "standard",
+        "label": "Voicemail",
+        "line": "Hey {name}, this is {you} with IBM. Quick question about how {company} is handling device management and mobile security. I'll send a short email too. If it's easier, reach me at {phone}.",
+        "note": "Under 20 seconds. Don't pitch the platform."
+      },
+      {
+        "id": "consult",
+        "label": "Consult voicemail",
+        "badge": "under 20 seconds",
+        "line": "Hey {name}, {you} with IBM. I did some homework on your company and I'm confident we can bring some real value. We're doing a few complimentary device management and security reviews for teams that stood out, and yours was one. I'll shoot you a short email too. If it's easier, reach me at {phone}.",
+        "note": "Same confident angle as the call, so the voicemail and email line up.",
+        "openers": [
+          "consult",
+          "consultshort",
+          "proofconsult"
+        ]
+      }
+    ],
+    "cadence": [
+      {
+        "label": "Cadence · Attempt 1",
+        "text": "Call, leave the short voicemail, send the follow-up email."
+      },
+      {
+        "label": "Attempt 2",
+        "text": "Call 2-3 days later. Don't repeat the same voicemail."
+      },
+      {
+        "label": "Attempt 3",
+        "text": "Call ~1 week later. If no answer, move to nurture or wait for a trigger."
+      }
+    ]
+  },
+  "proof": [
+    {
+      "id": "forrester-tei",
+      "label": "★ Safest · analyst-backed",
+      "stat": "**96%** less config time",
+      "line": "\"Forrester found teams cut device setup and configuration time by 96%, and onboarding a new person by 47%.\" Pure device-management proof, third-party, quote it verbatim.",
+      "src": "Forrester TEI",
+      "kind": "third-party analyst"
+    },
+    {
+      "id": "setup-45-5",
+      "label": "Time back · go-to",
+      "stat": "**45 min → 5** per device",
+      "line": "\"We've seen new-device setup drop from about 45 minutes to 5, and claw back ~50 IT hours a month.\"",
+      "src": "your ADG / Vegas briefs",
+      "approved": "Approved for external use by evanji, 2026-10-05"
+    },
+    {
+      "id": "tickets-60",
+      "label": "Ticket relief · busy help desk",
+      "stat": "**~60%** fewer tickets",
+      "line": "\"Teams have seen roughly 60% fewer device tickets, up to 70% by day 90.\" Use when they gripe about support load.",
+      "src": "your Hacienda brief",
+      "approved": "Approved for external use by evanji, 2026-10-05"
+    },
+    {
+      "id": "cost-36k",
+      "label": "Cost · exec ear",
+      "stat": "**~$36K/yr** saved",
+      "line": "\"On ~100 devices, just 30 min saved per user a month is about $36K a year in IT time.\" Lead with this for a budget owner.",
+      "src": "your ADG model",
+      "approved": "Approved for external use by evanji, 2026-10-05"
+    },
+    {
+      "id": "scale-175m",
+      "label": "Scale · instant trust",
+      "stat": "**175M+** devices",
+      "line": "\"IBM manages 175M+ endpoints across 20,000+ organizations.\" Drop anywhere they doubt the size or track record.",
+      "src": "IBM MaaS360",
+      "kind": "IBM product claim"
+    }
+  ],
+  "proofNote": "**Lead with device management.** These are your management + IT-time numbers — setup, tickets, hours saved. Quote the Forrester numbers as hard fact. Frame the $36K / 60% / 45-min stats as \"we've seen teams...\" — they're real estimates from your briefs, not guarantees. Pick **one** stat that matches their pain, then go back to the ask.",
+  "coaching": {
+    "tonality": [
+      {
+        "label": "Say less",
+        "text": "The shorter the opener, the more confident it sounds."
+      },
+      {
+        "label": "Talk like yourself",
+        "text": "If you wouldn't say it to a coworker, don't say it to a prospect."
+      },
+      {
+        "label": "Real pauses",
+        "text": "Ask the question, then stop talking."
+      },
+      {
+        "label": "Match their pace",
+        "text": "Busy = get to the point. Engaged = slow down."
+      }
+    ],
+    "doRules": [
+      "Ask a short question early",
+      "Pause after the question",
+      "Use plain English like \"company devices\"",
+      "Mirror their wording back to them"
+    ],
+    "dontRules": [
+      "Do not monologue about MaaS360",
+      "Do not say \"I know this is a long shot\"",
+      "Do not ask five questions in a row",
+      "Do not end with \"let me know\""
+    ],
+    "mindset": [
+      "Start a conversation",
+      "Sell the meeting, not the platform",
+      "One question, then listen",
+      "Curious beats clever",
+      "Shorter sounds more confident"
+    ],
+    "methods": [
+      {
+        "title": "Curious method",
+        "bestFor": "most live connects",
+        "text": "Start with a low-pressure question that gets them talking before you explain anything.",
+        "example": "\"When it comes to company devices, what's usually the biggest headache for your team?\""
+      },
+      {
+        "title": "Pattern method",
+        "bestFor": "creating a reason to meet",
+        "text": "After they answer, mention a common pattern that may or may not apply.",
+        "example": "\"A lot of teams already have a tool, but still hit gaps around a clearer view, mobile security, or manual support work.\""
+      },
+      {
+        "title": "Referral method",
+        "bestFor": "unclear title",
+        "text": "Ask for direction instead of forcing the pitch on the wrong person.",
+        "example": "\"You may not be the right person, but who usually owns device management on your side?\""
+      }
+    ]
+  },
+  "resources": []
+}
