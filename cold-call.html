@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+  MaaS360 Cold Call Cockpit
+  Design: Select T cold call cockpit (Prep + Engage · Discover · Explore · Secure + Voicemail).
+  Content: data/coldcall-maas360.json. This file is only the shell; every script, objection,
+  proof point and coaching line is rendered from the data file by assets/cold-call.js.
+  Live Mode (button or L) collapses the page to the in-call sections.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaaS360 Cold Call Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="carbon.css">
+  <script src="carbon-theme.js"></script>
+  <link rel="stylesheet" href="assets/cold-call.css">
+</head>
+<body class="acc-cold">
+  <!-- ===================== NAV (shared site nav, unchanged) ===================== -->
+  <header class="site-nav">
+    <div class="site-nav-inner">
+      <a class="site-nav-brand" href="index.html" aria-label="MaaS360 Sales Guide — home">
+        <svg class="ibm-logo" viewBox="0 0 110 44" role="img" aria-label="IBM">
+          <defs><mask id="ibmbars">
+            <rect width="110" height="44" fill="#000"/>
+            <g fill="#fff">
+              <rect y="0" width="110" height="2.93"/><rect y="5.87" width="110" height="2.93"/>
+              <rect y="11.73" width="110" height="2.93"/><rect y="17.6" width="110" height="2.93"/>
+              <rect y="23.47" width="110" height="2.93"/><rect y="29.33" width="110" height="2.93"/>
+              <rect y="35.2" width="110" height="2.93"/><rect y="41.07" width="110" height="2.93"/>
+            </g>
+          </mask></defs>
+          <text x="0" y="36" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="46" letter-spacing="-1" fill="currentColor" mask="url(#ibmbars)">IBM</text>
+        </svg>
+        <span class="product">MaaS360 Sales Guide</span>
+      </a>
+      <nav class="site-nav-links" aria-label="Guides">
+        <a href="index.html">Hub</a>
+        <a href="prospecting.html">Prospecting</a>
+        <a href="cold-call.html" class="active">Cold Call</a>
+        <a href="resources.html">Resources</a>
+        <a href="onboarding.html">Onboarding</a>
+        <a href="rep-alignment.html">Rep Alignment</a>
+        <a href="territory-map.html">Territory Map</a>
+      </nav>
+      <button class="live-btn" type="button" id="liveBtn" aria-pressed="false" title="Toggle Live Mode (L)">
+        <span class="dot"></span><span id="liveLbl">Live Mode</span>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Toggle light or dark theme">
+        <svg class="tt-moon" viewBox="0 0 32 32" aria-hidden="true"><path d="M13.5 5.5A10.5 10.5 0 1 0 26.5 18.5 8.5 8.5 0 0 1 13.5 5.5z"/></svg>
+        <svg class="tt-sun" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 12a4 4 0 1 0 4 4 4 4 0 0 0-4-4zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2zM15 3h2v4h-2zM15 25h2v4h-2zM5.6 7l1.4-1.4 2.8 2.8L8.5 9.9zM22.1 23.5l1.4-1.4 2.9 2.8-1.5 1.5zM3 15h4v2H3zM25 15h4v2h-4zM7 26.4 5.6 25l2.8-2.9 1.5 1.5zM23.5 9.9l2.8-2.9L27.8 8.5 24.9 11.3z"/></svg>
+        <span class="tt-label">Dark</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap" id="cockpit" aria-busy="true">
+    <div class="head">
+      <div class="eyebrow" id="eyebrow"></div>
+      <h1 id="title">Cold Call Cockpit</h1>
+      <p class="sub" id="headSub"></p>
+      <p class="live-hint" id="liveHint"></p>
+      <div class="draft-flag full-guide" id="draftFlag" hidden></div>
+    </div>
+
+    <!-- Setup: sector + persona + personalization -->
+    <section class="setup" aria-label="Call setup">
+      <div class="setup-row">
+        <div class="setup-label"><span class="step-n">1</span> Sector</div>
+        <div class="pills" id="sectorPills" role="tablist" aria-label="Choose sector"></div>
+      </div>
+      <div class="setup-row">
+        <div class="setup-label"><span class="step-n">2</span> Who are you calling?</div>
+        <div class="pills" id="personaPills" role="tablist" aria-label="Choose persona"></div>
+      </div>
+      <details class="personalize" id="personalize">
+        <summary>Personalize the scripts <span class="hint">optional · fills the [brackets] · saved in this browser only</span></summary>
+        <div class="inputs">
+          <label>Your name<input type="text" data-in="you" placeholder="Your Name" autocomplete="name"></label>
+          <label>Your city<input type="text" data-in="city" placeholder="e.g., Austin"></label>
+          <label>Your callback number<input type="tel" data-in="phone" placeholder="e.g., 512-555-0100"></label>
+          <label>Prospect first name<input type="text" data-in="name" placeholder="e.g., Sarah"></label>
+          <label>Company<input type="text" data-in="company" placeholder="e.g., Acme Health"></label>
+          <label>Type of company<input type="text" data-in="type" placeholder="defaults to the sector"></label>
+          <label>Peer / reference company<input type="text" data-in="peerco" placeholder="only if approved"></label>
+        </div>
+        <button type="button" class="link-btn" id="clearInputs">Clear my inputs</button>
+      </details>
+    </section>
+
+    <nav class="jump full-guide" aria-label="Jump to">
+      <a href="#s-goal">The Goal</a>
+      <a href="#s-prep">Prep</a>
+      <a href="#s-engage">1 · Engage</a>
+      <a href="#s-discover">2 · Discover</a>
+      <a href="#s-explore">3 · Explore</a>
+      <a href="#s-no">When They Say No</a>
+      <a href="#s-secure">4 · Secure</a>
+      <a href="#s-voicemail">Voicemail</a>
+      <a href="#s-cheat">Cheat Sheet</a>
+      <a href="#s-review">Review list</a>
+      <span class="collapse-ctl"><button type="button" id="collapseAll">Collapse all</button><button type="button" id="expandAll">Expand all</button></span>
+    </nav>
+
+    <section class="sec full-guide" id="s-goal"></section>
+    <section class="sec full-guide" id="s-prep"></section>
+    <section class="sec" id="s-engage"></section>
+    <section class="sec" id="s-discover"></section>
+    <section class="sec" id="s-explore"></section>
+    <section class="sec" id="s-no"></section>
+    <section class="sec" id="s-secure"></section>
+    <section class="sec" id="s-voicemail"></section>
+    <section class="sec full-guide" id="s-cheat"></section>
+    <section class="sec full-guide" id="s-review"></section>
+  </main>
+
+  <aside class="rail" id="rail" aria-label="Live call flow">
+    <button class="rail-close" id="railClose" type="button" aria-label="Hide">×</button>
+    <div class="rail-head">LIVE CALL</div>
+    <a href="#s-engage">1 · Engage <span class="hint" id="railOpener"></span></a>
+    <div class="ar">↓</div>
+    <a href="#s-discover">2 · Discover</a>
+    <div class="ar">↓</div>
+    <a href="#s-explore">3 · Explore</a>
+    <div class="ar">↓</div>
+    <a href="#s-secure">4 · Secure</a>
+    <div class="rail-stop">ASK, THEN STOP TALKING</div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/cold-call.js"></script>
+</body>
+</html>

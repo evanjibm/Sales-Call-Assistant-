@@ -1,0 +1,57 @@
+/* STAND-IN for the MaaS360 Sales Guide's shared carbon.css.
+   The real file wasn't available when this repo was created. It provides the same
+   token names the old Cold Call page used (--primary, --support-error, --acc, ...),
+   the shared site nav, and the theme toggle. Replace it with the real carbon.css. */
+
+:root{
+  --bg:#f4f4f4; --panel:#ffffff; --panel-2:#f2f4f8; --line:#e0e0e0;
+  --text:#161616; --text-dim:#525252;
+  --primary:#0f62fe; --on-primary:#ffffff; --link:#0f62fe;
+  --acc:#0f62fe; --acc-bg:#edf5ff; --acc-fg:#0043ce;
+  --support-success:#198038; --support-error:#da1e28; --support-warning:#f1c21b;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#161616; --panel:#262626; --panel-2:#2e2e2e; --line:#393939;
+    --text:#f4f4f4; --text-dim:#c6c6c6;
+    --primary:#4589ff; --on-primary:#ffffff; --link:#78a9ff;
+    --acc:#4589ff; --acc-bg:#001d6c; --acc-fg:#a6c8ff;
+    --support-success:#42be65; --support-error:#ff8389; --support-warning:#f1c21b;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#161616; --panel:#262626; --panel-2:#2e2e2e; --line:#393939;
+  --text:#f4f4f4; --text-dim:#c6c6c6;
+  --primary:#4589ff; --on-primary:#ffffff; --link:#78a9ff;
+  --acc:#4589ff; --acc-bg:#001d6c; --acc-fg:#a6c8ff;
+  --support-success:#42be65; --support-error:#ff8389; --support-warning:#f1c21b;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box;}
+body{margin:0; background:var(--bg); color:var(--text); font-family:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif; font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;}
+a{color:var(--link);}
+
+.site-nav{position:sticky; top:0; z-index:50; background:var(--panel); border-bottom:1px solid var(--line);}
+.site-nav-inner{max-width:1160px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; gap:14px;}
+.site-nav-brand{display:flex; align-items:center; gap:12px; color:var(--text); text-decoration:none; flex:0 0 auto;}
+.site-nav-brand .ibm-logo{width:52px; height:21px; color:var(--text);}
+.site-nav-brand .product{font-weight:600; font-size:14px; white-space:nowrap;}
+.site-nav-links{display:flex; flex-wrap:wrap; gap:2px; flex:1; min-width:0;}
+.site-nav-links a{font-size:13.5px; color:var(--text-dim); text-decoration:none; padding:7px 10px; border-bottom:2px solid transparent;}
+.site-nav-links a:hover{color:var(--text); background:var(--panel-2);}
+.site-nav-links a.active{color:var(--text); font-weight:600; border-bottom-color:var(--acc);}
+
+.theme-toggle{display:flex; align-items:center; gap:6px; height:34px; padding:0 10px; background:transparent; border:1px solid var(--line); color:var(--text); cursor:pointer; font:500 12.5px 'IBM Plex Sans',sans-serif;}
+.theme-toggle svg{width:16px; height:16px; fill:currentColor;}
+.tt-sun{display:none;}
+:root[data-theme="dark"] .tt-sun{display:block;} :root[data-theme="dark"] .tt-moon{display:none;}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .tt-sun{display:block;} :root:not([data-theme="light"]) .tt-moon{display:none;} }
+
+@media (max-width:760px){
+  .site-nav-inner{flex-wrap:wrap; padding:8px 16px;}
+  .site-nav-links{order:3; flex-basis:100%; overflow-x:auto; flex-wrap:nowrap;}
+  .site-nav-links a{white-space:nowrap;}
+}

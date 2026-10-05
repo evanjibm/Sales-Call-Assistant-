@@ -1,0 +1,10 @@
+{
+  "name": "maas360-sales-guide",
+  "private": true,
+  "description": "MaaS360 Sales Guide: Cold Call Cockpit rendered from data/coldcall-maas360.json",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "check": "node tools/check-coldcall.mjs && node tools/check-coverage.mjs",
+    "review": "node tools/check-coldcall.mjs"
+  }
+}
