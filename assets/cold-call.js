@@ -92,6 +92,10 @@
   function secTitle(text, badge, move) {
     return '<div class="sec-title">' + (move ? '<span class="move">' + move + '</span> ' : '') + text + (badge ? ' <span class="badge">' + badge + '</span>' : '') + '</div>';
   }
+  function objective(key) {
+    var o = D.objectives && D.objectives[key];
+    return o ? '<p class="objective full-guide">Objective: ' + md(o) + dB(D.objectives) + '</p>' : '';
+  }
   function aiBox(ai) {
     if (!ai) return '';
     return '<div class="ai full-guide"><div class="ai-h">AI Assist' + dB(ai) + '</div><p>' + md(ai.text) + '</p>' +
@@ -113,7 +117,8 @@
   // ---------- header + setup ----------
   function renderHeader() {
     document.title = D.product.name + ' ' + D.product.title;
-    $('#eyebrow').textContent = D.product.eyebrow;
+    $('#eyebrow').innerHTML = '<span class="tier-badge focus">' + esc(D.product.name) + '</span>' + esc(D.product.eyebrow);
+    $('#versionTag').textContent = 'Version ' + D.meta.version + ' · ' + D.product.name;
     $('#title').innerHTML = esc(D.product.name) + ' <span class="h1-tail">' + esc(D.product.title) + '</span>';
     $('#headSub').innerHTML = md(D.goal.line);
     $('#liveHint').innerHTML = md(D.liveHint);
@@ -147,7 +152,7 @@
     var chips = D.triggers.map(function (t) {
       return '<button type="button" class="chip' + (t === state.trigger ? ' active' : '') + '" data-trigger="' + esc(t) + '">' + esc(t) + '</button>';
     }).join('') + '<span class="custom-row"><span class="custom-lead">I noticed [Company]…</span><input type="text" id="customTrigger" placeholder="type your own reason, e.g. is opening three new clinics" value="' + esc(D.triggers.indexOf(state.trigger) < 0 && state.trigger ? state.trigger : '') + '"></span>';
-    $('#s-prep').innerHTML = secTitle('Before You Dial: Prep', 'one real reason to call') +
+    $('#s-prep').innerHTML = secTitle('Before You Dial: Prep', 'one real reason to call') + objective('prep') +
       '<div class="sub-title">Pick your reason to call' + rootDraft('triggers') + ' <span class="hint">finishes "I noticed [Company] …" in the automated-agent script</span></div>' +
       '<div class="chips" id="triggerChips">' + chips + '</div>' +
       '<div class="two-col">' +
@@ -172,7 +177,7 @@
     // proof quoted by the script actually on screen (the sector version replaces the generic one)
     var refs = (ss ? ss.proofRefs : op.proofRefs) || [];
 
-    var html = secTitle('Engage: earn the next 30 seconds', 'say this', '1') +
+    var html = secTitle('Engage: earn the next 30 seconds', 'say this', '1') + objective('engage') +
       '<div class="value-box"><div class="value-label">What we do · only if they ask</div>' +
         '<p class="value-line copyable">' + q(D.value) + '</p>' +
         (variant ? '<p class="note"><b>For ' + esc(per.role) + ' (' + esc(variant.label) + '):</b> ' + md(variant.line) + '</p>' : '') +
@@ -221,7 +226,7 @@
 
   function renderDiscover() {
     var d = D.discover, per = persona();
-    var html = secTitle('Discover: three questions', 'ask, react, dig once', '2') +
+    var html = secTitle('Discover: three questions', 'ask, react, dig once', '2') + objective('discover') +
       '<p class="lead full-guide">' + md(d.lead) + dB(d, 'lead') + '</p>' +
       '<div class="persona-hyp">Pain to test for <b>' + esc(per.role) + '</b>: ' + md(per.hypothesis) + dB(per, 'hypothesis') + '</div>' +
       '<div class="q-list">' + d.questions.map(function (x) {
@@ -270,20 +275,23 @@
     var refs = o.proofRefs || [];
     body += '<span class="goes">Goes after: ' + esc(o.goes) + '</span>' + dB(o, 'goes') +
       (refs.length ? '<div class="links"><span class="links-h">Back it up</span>' + refs.map(function (id) { var p = byId(D.proof, id); return '<span class="tag">' + md(p.stat) + ' · ' + esc(p.src) + '</span>' + todoB(p); }).join('') + '</div>' : '');
-    return '<div class="obj' + (o.exit ? ' exit' : '') + '" data-obj data-id="' + esc(o.id) + '"><button class="obj-head" type="button"><span class="q">"' + esc(o.q) + '"' + (targeted ? '<span class="tgt">for this opener</span>' : '') + '</span><span class="chev">▾</span></button><div class="obj-body">' + body + '</div></div>';
+    return '<div class="obj prod' + (o.exit ? ' exit' : '') + '" data-obj data-id="' + esc(o.id) + '"><button class="obj-head" type="button"><span class="q">"' + esc(o.q) + '"' + (targeted ? '<span class="tgt">for this opener</span>' : '') + '</span><span class="chev">▾</span></button><div class="obj-body">' + body + '</div></div>';
   }
 
   function renderExplore() {
     var e = D.explore, ca = consultActive();
     var general = D.objections.filter(function (o) { return !o.openers.length; });
     var consult = D.objections.filter(function (o) { return o.openers.length; });
-    var html = secTitle('Explore: navigate objections', 'tap an objection', '3') +
+    var html = secTitle('Explore: navigate objections', 'tap an objection', '3') + objective('explore') +
       '<div class="move-steps">' + e.steps.map(function (s) { return '<div class="ms"><div class="ms-n">' + esc(s.n) + '</div><p>' + md(s.t) + '</p></div>'; }).join('') + '</div>' +
       (isDraft(e, 'steps') ? '<p class="hint full-guide">Step descriptions' + dB(e, 'steps') + '</p>' : '');
     if (ca) {
-      html += '<div class="consult-banner">' + md(e.consultIntro) + '</div>' +
+      html += '<div class="sub-title">Consult offer objections <span class="hint">' + consult.filter(forOpener).length + ' for ' + esc(opener().tag) + '</span></div>' +
+        '<div class="consult-banner">' + md(e.consultIntro) + '</div>' +
         '<div class="obj-grid">' + consult.filter(forOpener).map(function (o) { return objectionCard(o, true); }).join('') + '</div>' +
-        '<div class="sub-title">General objections</div>';
+        '<div class="sub-title">Common MaaS360 objections <span class="hint">' + general.length + ' cards · from the MaaS360 cockpit</span></div>';
+    } else {
+      html += '<div class="sub-title">Common MaaS360 objections <span class="hint">' + general.length + ' cards · from the MaaS360 cockpit</span></div>';
     }
     html += '<div class="obj-grid">' + general.map(function (o) { return objectionCard(o, false); }).join('') + '</div>';
     if (!ca) {
@@ -310,7 +318,7 @@
     var askBy = function (id) { return byId(s.asks, id); };
     var closeBy = function (id) { return byId(s.closes, id); };
     var noBy = function (id) { return byId(D.noPlaybook.types, id); };
-    var html = secTitle('Secure the next step', 'two of three, and you ask', '4') +
+    var html = secTitle('Secure the next step', 'two of three, and you ask', '4') + objective('secure') +
       '<div class="signals">' + s.signals.map(function (g, i) {
         return '<div class="signal"><div class="sig-n">Signal 0' + (i + 1) + ' · ' + esc(g.title) + dB(s, 'signals') + '</div><p>' + md(g.t) + '</p>' +
           '<ul>' + g.flags.map(function (f) { return '<li>' + md(f) + '</li>'; }).join('') + '</ul></div>';
@@ -463,6 +471,7 @@
       if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.metaKey || e.ctrlKey || e.altKey) return;
       if (e.key === 'l' || e.key === 'L') setLive(!document.body.classList.contains('live'));
     });
+    var ps = $('#pageSelect'); if (ps) ps.addEventListener('change', function () { location.href = ps.value; });
     $('#railClose').addEventListener('click', function () { $('#rail').hidden = true; save('rail-hidden', true); });
     if (load('rail-hidden', false)) $('#rail').hidden = true;
     $('#collapseAll').addEventListener('click', function () { setAllCollapsed(true); });
@@ -503,6 +512,8 @@
     $('#cockpit').removeAttribute('aria-busy');
     if (location.hash) { var el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }
   }
+  // a published single-file build sets window.COLDCALL_DATA; otherwise load the data file
+  if (window.COLDCALL_DATA) { init(window.COLDCALL_DATA); return; }
   fetch(DATA_URL, { cache: 'no-cache' })
     .then(function (r) { if (!r.ok) throw new Error(r.status + ' ' + r.statusText); return r.json(); })
     .then(init)

@@ -43,6 +43,14 @@
     ]
   },
   "liveHint": "Live Mode on — showing only **Engage**, **Discover**, **Explore**, **Secure**, and **Voicemail**. Press **L** or the button to exit.",
+  "objectives": {
+    "status": "DRAFT: review",
+    "prep": "Walk into the dial with one real reason to call: hiring, growth, new locations, remote work, compliance, or device-heavy teams.",
+    "engage": "Earn the next 30 seconds and give them one reason to care about how they manage and secure their devices.",
+    "discover": "Find out whether the device problem is real for them, what it costs, and who owns it. One question, then listen.",
+    "explore": "Agree fast, find out what is behind the pushback, and ask one more question. Never fight it.",
+    "secure": "Leave with 10-15 minutes on the calendar, or a callback, a referral, or a follow-up date. Never end on \"let me know\"."
+  },
   "outcomes": [
     {
       "id": "book",

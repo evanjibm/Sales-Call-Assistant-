@@ -22,6 +22,7 @@ html{scroll-behavior:smooth; scroll-padding-top:72px;}
 [hidden]{display:none !important;}
 a{color:var(--link);}
 .sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
+.mono,.eyebrow,.badge,.hint,.cue,.sub-title,.sec-title,.data-h,.ai-h,.value-label,.beat-n,.q-m,.ob-l,.goes,.sig-n,.ask-h,.mcol-h,.ms-n,.script-foot,.tag,.src{font-family:'IBM Plex Mono',monospace;}
 
 /* Live Mode button in the shared nav */
 .live-btn{display:flex; align-items:center; gap:7px; background:var(--primary); border:1px solid var(--primary); color:var(--on-primary); font:600 13px 'IBM Plex Sans',sans-serif; padding:8px 13px; cursor:pointer; white-space:nowrap;}
@@ -326,6 +327,28 @@ body.live .beat .say, body.live .q-list > .q .say{font-size:20px;}
 }
 
 
+
+/* ===== From the Select T template: header, product objections, badges, version tag ===== */
+.obj.prod{border-left-color:var(--purple);}
+.tgt{display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--on-primary); background:var(--purple); padding:2px 6px; margin-left:6px; vertical-align:2px;}
+.really{font-size:13px; color:var(--text-dim); padding:8px 0 10px;}
+.really b{color:var(--text);}
+.ob-row.press .resp{font-style:normal; font-size:14px; background:var(--panel-2); padding:8px 10px; border-left:3px solid var(--purple);}
+.tier-badge,.seg-badge,.note-badge{font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; padding:2px 6px; display:inline-block; vertical-align:2px;}
+.tier-badge.focus{color:var(--on-primary); background:var(--primary);}
+.seg-badge{color:var(--text-mute); background:var(--panel-2); border:1px solid var(--line); font-weight:500; text-transform:none; letter-spacing:0;}
+.version-tag{position:fixed; left:12px; bottom:10px; z-index:30; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--text-mute); background:var(--panel); border:1px solid var(--line); padding:3px 8px;}
+@media print{.version-tag{display:none;}}
+.brand{display:flex; align-items:center; gap:12px; color:var(--text); text-decoration:none; min-width:0;}
+.ibm-logo{width:52px; height:21px; flex:0 0 auto; color:var(--text);}
+.brand-name{font-weight:600; font-size:14px; white-space:nowrap;}
+.brand-sub{font-weight:400; color:var(--text-dim); margin-left:4px;}
+.nav-spacer{flex:1;}
+.nav-select select{font-family:inherit; font-size:13.5px; font-weight:500; color:var(--text); background:var(--panel-2); border:1px solid var(--line); border-bottom:2px solid var(--primary); padding:8px 30px 8px 10px; max-width:260px; cursor:pointer;
+  appearance:none; background-image:linear-gradient(45deg,transparent 50%,var(--text-dim) 50%),linear-gradient(135deg,var(--text-dim) 50%,transparent 50%); background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%; background-size:5px 5px; background-repeat:no-repeat;}
+.chip-group{flex-basis:100%; font-family:'IBM Plex Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.05em; color:var(--text-mute); margin-top:4px;}
+.chip-group:first-child{margin-top:0;}
+
 /* ===================================================================
    MaaS360 additions (components the old cockpit had that the template didn't)
    =================================================================== */
@@ -386,7 +409,6 @@ body.live .dbadge{display:none;}
 
 /* objections extras */
 .consult-banner{background:var(--acc-bg); border-left:4px solid var(--primary); padding:10px 14px; margin-bottom:12px; font-size:13.5px;}
-.tgt{font:600 10px 'IBM Plex Mono',monospace; color:var(--acc-fg); background:var(--acc-bg); padding:2px 6px; margin-left:6px; vertical-align:2px;}
 .alt-lines{margin-top:6px;}
 .alt{padding:8px 0; border-top:1px dashed var(--line);}
 .alt .src-note{margin:0 0 4px;}
@@ -422,3 +444,14 @@ body.live .dbadge{display:none;}
 .review-list li{margin-bottom:6px; break-inside:avoid;}
 .review-list code{font-size:11.5px; color:var(--text);}
 @media (max-width:720px){ .rules{grid-template-columns:1fr;} }
+
+/* Select T header details on top of the shared nav */
+.theme-toggle{width:36px; height:36px; padding:0; justify-content:center; gap:0;}
+.theme-toggle svg{width:18px; height:18px;}
+.eyebrow .tier-badge{margin-right:6px;}
+@media (max-width:720px){
+  .site-nav-inner{flex-wrap:wrap; padding:10px 16px;}
+  .brand-sub{display:none;}
+  .nav-select{order:5; flex:1 1 100%;}
+  .nav-select select{max-width:none; width:100%;}
+}
