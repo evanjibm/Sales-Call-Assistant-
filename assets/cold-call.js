@@ -400,6 +400,12 @@
   function renderReview() {
     var r = reviewItems();
     function li(x) { return '<li><code>' + esc(x.path) + '</code> · ' + esc(x.what) + '</li>'; }
+    if (D.meta.reviewed && !r.draft.length && !r.todo.length) {
+      var rv = D.meta.review || {};
+      $('#s-review').innerHTML = secTitle('Review status', 'approved') +
+        '<p class="note">All content approved' + (rv.approvedBy ? ' by <b>' + esc(rv.approvedBy) + '</b>' : '') + (rv.date ? ' on ' + esc(rv.date) : '') + '. ' + (rv.note ? esc(rv.note) : '') + '</p>';
+      return;
+    }
     $('#s-review').innerHTML = secTitle('Review list', r.draft.length + ' DRAFT · ' + r.todo.length + ' TODO') +
       '<p class="note">Generated from <code>data/coldcall-maas360.json</code>. Clear an item by editing the data and removing its <code>status</code>, <code>draft</code>, or <code>todo</code> marker.</p>' +
       '<div class="sub-title">TODO: verify approved for external use</div><ul class="review-list">' + r.todo.map(li).join('') + '</ul>' +

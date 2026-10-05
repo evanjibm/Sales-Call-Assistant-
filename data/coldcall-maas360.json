@@ -3,22 +3,21 @@
   "meta": {
     "id": "maas360",
     "version": "2026-10-05",
-    "reviewed": false,
+    "reviewed": true,
     "source": "Migrated from the old MaaS360 Cold Call Cockpit (reference/maas360-old-cockpit.html). Old wording is kept verbatim; the hardcoded rep name -> {you} ([Your Name]) and hardcoded city -> {city} ([Your City]).",
     "markup": "{token} fills from setup inputs/data · **bold** · [[delivery cue]] · ((if-they-say branch)) · [Literal] = fill by hand · \\n = line break",
     "conventions": [
       "status: \"DRAFT: review\" on an object = the whole object is new draft content",
       "draft: [field names] on an object = those fields are new draft content",
-      "todo: \"TODO: verify approved for external use\" = old content that must be cleared before external use"
-    ]
+      "todo: \"TODO: verify approved for external use\" = old content that must be cleared before external use",
+      "approved: proof or account lists cleared for external use"
+    ],
+    "review": {
+      "approvedBy": "evanji",
+      "date": "2026-10-05",
+      "note": "All DRAFT and TODO items approved, including brief-sourced proof (ADG, Vegas, Hacienda) and the named sector accounts."
+    }
   },
-  "draft": [
-    "triggers",
-    "costs",
-    "ownerTeam",
-    "focus",
-    "topic"
-  ],
   "product": {
     "name": "MaaS360",
     "full": "IBM MaaS360",
@@ -44,7 +43,6 @@
   },
   "liveHint": "Live Mode on — showing only **Engage**, **Discover**, **Explore**, **Secure**, and **Voicemail**. Press **L** or the button to exit.",
   "objectives": {
-    "status": "DRAFT: review",
     "prep": "Walk into the dial with one real reason to call: hiring, growth, new locations, remote work, compliance, or device-heavy teams.",
     "engage": "Earn the next 30 seconds and give them one reason to care about how they manage and secure their devices.",
     "discover": "Find out whether the device problem is real for them, what it costs, and who owns it. One question, then listen.",
@@ -127,12 +125,7 @@
       "valueVariant": "IT version",
       "openingTab": "it",
       "hypothesis": "setup, apps, policies, and support quietly eating IT time",
-      "peer": "trying to cut the manual work around setup and support tickets",
-      "draft": [
-        "plural",
-        "hypothesis",
-        "peer"
-      ]
+      "peer": "trying to cut the manual work around setup and support tickets"
     },
     {
       "id": "security",
@@ -141,12 +134,7 @@
       "valueVariant": "Security version",
       "openingTab": "security",
       "hypothesis": "mobile devices and BYOD turning into more of a security conversation",
-      "peer": "trying to keep work data protected across mobile and BYOD",
-      "draft": [
-        "plural",
-        "hypothesis",
-        "peer"
-      ]
+      "peer": "trying to keep work data protected across mobile and BYOD"
     },
     {
       "id": "exec",
@@ -155,12 +143,7 @@
       "valueVariant": "Plain English",
       "openingTab": "exec",
       "hypothesis": "device risk and manual IT work competing for the same team",
-      "peer": "looking to reduce device risk and take manual work off IT",
-      "draft": [
-        "plural",
-        "hypothesis",
-        "peer"
-      ]
+      "peer": "looking to reduce device risk and take manual work off IT"
     },
     {
       "id": "ops",
@@ -168,8 +151,7 @@
       "plural": "help desk and infrastructure leads",
       "valueVariant": "IT version",
       "hypothesis": "the same device tickets coming back, with updates going manual for people off-desk",
-      "peer": "trying to stop chasing the same device tickets twice",
-      "status": "DRAFT: review"
+      "peer": "trying to stop chasing the same device tickets twice"
     },
     {
       "id": "unknown",
@@ -178,12 +160,7 @@
       "valueVariant": "Curiosity line",
       "openingTab": "unknown",
       "hypothesis": "device management and mobile security living with someone else",
-      "peer": "routing device questions to the right owner",
-      "draft": [
-        "plural",
-        "hypothesis",
-        "peer"
-      ]
+      "peer": "routing device questions to the right owner"
     }
   ],
   "industries": [
@@ -198,7 +175,7 @@
           "Sedgwick County",
           "Oakland"
         ],
-        "todo": "TODO: verify approved for external use (are these named accounts customers? do not cite as references until confirmed)"
+        "approved": "Approved for external use by evanji, 2026-10-05"
       },
       "hookLabel": "Government",
       "hook": "\"More work, same staff; device work eats hours.\"",
@@ -273,7 +250,7 @@
           "Creighton",
           "Lincoln Public Schools"
         ],
-        "todo": "TODO: verify approved for external use (are these named accounts customers? do not cite as references until confirmed)"
+        "approved": "Approved for external use by evanji, 2026-10-05"
       },
       "hookLabel": "Education",
       "hook": "\"Devices into students/staff hands fast, especially start of year.\"",
@@ -333,7 +310,7 @@
           "LoanDepot",
           "QBE/NAU"
         ],
-        "todo": "TODO: verify approved for external use (are these named accounts customers? do not cite as references until confirmed)"
+        "approved": "Approved for external use by evanji, 2026-10-05"
       },
       "hookLabel": "Finance / Banking",
       "hook": "\"Manage devices across branches + remote staff; prove compliance without the scramble.\"",
@@ -391,7 +368,7 @@
           "North Memorial",
           "Magellan Health"
         ],
-        "todo": "TODO: verify approved for external use (are these named accounts customers? do not cite as references until confirmed)"
+        "approved": "Approved for external use by evanji, 2026-10-05"
       },
       "hookLabel": "Healthcare",
       "hook": "\"Manage + secure shared and personal devices without adding clinician work.\"",
@@ -449,7 +426,7 @@
           "Japs-Olson",
           "Stuller"
         ],
-        "todo": "TODO: verify approved for external use (are these named accounts customers? do not cite as references until confirmed)"
+        "approved": "Approved for external use by evanji, 2026-10-05"
       },
       "hookLabel": "Manufacturing",
       "hook": "\"People off-desk; device updates and support go manual.\"",
@@ -514,7 +491,7 @@
           "Living Spaces",
           "Restaurant Technologies"
         ],
-        "todo": "TODO: verify approved for external use (are these named accounts customers? do not cite as references until confirmed)"
+        "approved": "Approved for external use by evanji, 2026-10-05"
       },
       "hookLabel": "Retail / Field",
       "hook": "\"Devices across many sites = lots of small daily problems.\"",
@@ -579,7 +556,7 @@
           "Husch Blackwell",
           "Fish & Richardson"
         ],
-        "todo": "TODO: verify approved for external use (are these named accounts customers? do not cite as references until confirmed)"
+        "approved": "Approved for external use by evanji, 2026-10-05"
       },
       "hookLabel": "Legal",
       "hook": "\"Manage every device for traveling attorneys; protect client data, no friction.\"",
@@ -637,7 +614,7 @@
           "Augeo",
           "Colle & McVoy"
         ],
-        "todo": "TODO: verify approved for external use (are these named accounts customers? do not cite as references until confirmed)"
+        "approved": "Approved for external use by evanji, 2026-10-05"
       },
       "hookLabel": "Professional Services",
       "hook": "\"Client data everywhere; people always on the road.\"",
@@ -695,7 +672,7 @@
           "Daktronics",
           "Deluxe"
         ],
-        "todo": "TODO: verify approved for external use (are these named accounts customers? do not cite as references until confirmed)"
+        "approved": "Approved for external use by evanji, 2026-10-05"
       },
       "hookLabel": "General / Default",
       "hook": "\"One-line: setup, security, and support may be quietly eating IT time.\"",
@@ -779,13 +756,11 @@
     },
     "automatedAgent": {
       "line": "Hi, this is {you} with IBM, trying to reach {name}. Quick question on how {company} is handling device management and mobile security. Best number for me is {phone}.",
-      "note": "Your name, IBM, the person, one reason, your number.",
-      "status": "DRAFT: review"
+      "note": "Your name, IBM, the person, one reason, your number."
     },
     "ai": {
       "text": "Before you dial: find one real reason to call ({company}, {role}, {type}).",
-      "prompt": "Give me one reason to call {company} about IBM MaaS360 (device management and mobile security) for a {role}. Use hiring, growth, new locations, remote work, compliance, or device-heavy teams. Phrase it so it finishes \"I noticed {company} …\".",
-      "status": "DRAFT: review"
+      "prompt": "Give me one reason to call {company} about IBM MaaS360 (device management and mobile security) for a {role}. Use hiring, growth, new locations, remote work, compliance, or device-heavy teams. Phrase it so it finishes \"I noticed {company} …\"."
     }
   },
   "openerGuide": {
@@ -1435,9 +1410,6 @@
     ]
   },
   "discover": {
-    "draft": [
-      "lead"
-    ],
     "lead": "One question, one insight, one ask. Ask, react, dig once, then move on. These are the three things worth finding out on a cold call.",
     "questions": [
       {
@@ -1448,10 +1420,7 @@
         "source": "Discovery opener · Create curiosity",
         "why": "Share one pattern: \"A lot of teams already have a tool. The gaps are usually manual work, mobile security, or support.\"",
         "strong": "They mention a pain point",
-        "weak": "They only say \"send info\" and give nothing else",
-        "draft": [
-          "why"
-        ]
+        "weak": "They only say \"send info\" and give nothing else"
       },
       {
         "n": 2,
@@ -1461,12 +1430,7 @@
         "source": "Direct opener · Discover",
         "why": "Any number in any unit is a win: hours a week, tickets, people.",
         "strong": "They give a number, or say when it spikes.",
-        "weak": "\"Hard to say.\" Move on; never push a stranger for a number.",
-        "draft": [
-          "why",
-          "strong",
-          "weak"
-        ]
+        "weak": "\"Hard to say.\" Move on; never push a stranger for a number."
       },
       {
         "n": 3,
@@ -1476,10 +1440,7 @@
         "source": "Opening Script · Wrong Person",
         "why": "Skip it if the first two already earned the meeting.",
         "strong": "They give a stakeholder name",
-        "weak": "They won't identify an owner",
-        "draft": [
-          "why"
-        ]
+        "weak": "They won't identify an owner"
       }
     ],
     "formula": [
@@ -1510,48 +1471,32 @@
         "label": "Names a tool",
         "line": "\"Got it, most teams I speak with already have something. How has **[Intune / Jamf / Workspace ONE]** been working overall?\"",
         "then": "\"Is there one part the team still complains about?\"",
-        "goes": "Listen for: Competition",
-        "draft": [
-          "goes"
-        ]
+        "goes": "Listen for: Competition"
       },
       {
         "label": "Happy / \"we're good\"",
         "line": "\"Totally fair, I'd be surprised if you didn't. Is it smooth across the board, or is there one area the team still gripes about? Even good tools have a weak spot.\"",
-        "goes": "Pain",
-        "draft": [
-          "goes"
-        ]
+        "goes": "Pain"
       },
       {
         "label": "Manual / messy",
         "line": "\"That sounds like a lot to keep track of. Is the painful part the **setup**, the **security** side, or **supporting users** after the fact?\"",
         "then": "\"How do you handle it when someone's remote or offsite?\"",
-        "goes": "Pain",
-        "draft": [
-          "goes"
-        ]
+        "goes": "Pain"
       },
       {
         "label": "Mentions a pain",
         "line": "\"How are you handling that today? And is that more of a headache for **IT**, or is it starting to hit your **end users** too?\"",
-        "goes": "Pain · Metrics",
-        "draft": [
-          "goes"
-        ]
+        "goes": "Pain · Metrics"
       },
       {
         "label": "Wrong person",
         "line": "\"No worries. Who's closest to device management or mobile security on your side?\"",
         "then": "\"Would it be weird if I mentioned you pointed me the right way?\"",
-        "goes": "Champion",
-        "draft": [
-          "goes"
-        ]
+        "goes": "Champion"
       }
     ],
     "meddpicc": {
-      "status": "DRAFT: review",
       "ask": [
         {
           "k": "Implicate the Pain (I)",
@@ -1592,7 +1537,6 @@
       ]
     },
     "dontAsk": {
-      "status": "DRAFT: review",
       "rows": [
         {
           "dont": "Are you the decision maker?",
@@ -1618,8 +1562,7 @@
     },
     "ai": {
       "text": "Build your pain hypothesis before you dial.",
-      "prompt": "For a {role} at {type}, give me a one-line pain hypothesis about device management and mobile security, then three cold-call questions: is the problem real, what does it cost, who owns it.",
-      "status": "DRAFT: review"
+      "prompt": "For a {role} at {type}, give me a one-line pain hypothesis about device management and mobile security, then three cold-call questions: is the problem real, what does it cost, who owns it."
     }
   },
   "explore": {
@@ -1637,15 +1580,11 @@
         "t": "Point the next line at Pain, Metrics, or the owner. Never fight it."
       }
     ],
-    "draft": [
-      "steps"
-    ],
     "consultIntro": "These are the objections that come up **specifically** when you offer a free review. The move is always the same: **agree fast, reframe the review as low-risk and about them, then re-ask for the 15 minutes.**",
     "consultPointer": "**The verbatim Consult Short script now lives up top — tap **Consult Short ★** in Say It Out Loud.** This section is just the deeper reference: detailed objection catches and the scripts to lock the meeting, leave a voicemail, and send the follow-up email.",
     "ai": {
       "text": "Prep objection handling for this account.",
-      "prompt": "Give me acknowledge / explore / continue lines for a {role} at {company} pushing back on IBM MaaS360. Likely incumbents: {incumbentList}.",
-      "status": "DRAFT: review"
+      "prompt": "Give me acknowledge / explore / continue lines for a {role} at {company} pushing back on IBM MaaS360. Likely incumbents: {incumbentList}."
     }
   },
   "objections": [
@@ -1657,9 +1596,6 @@
       "explore": "I work with teams on managing and securing company devices. I was really just trying to understand how you guys handle that today.",
       "cont": "Are you close to that, or is that someone else?",
       "goes": "Champion",
-      "draft": [
-        "goes"
-      ],
       "industries": []
     },
     {
@@ -1675,9 +1611,6 @@
       "explore": "Just so I don't send you something generic, are you using anything today for device management?",
       "cont": "The email makes more sense with 10 min of context. Crazy to compare notes next week?",
       "goes": "Pain · Listen for: Competition",
-      "draft": [
-        "goes"
-      ],
       "alts": [
         {
           "source": "Quick catch (Say It Out Loud)",
@@ -1715,9 +1648,6 @@
       "contSource": "Quick catch (Say It Out Loud)",
       "then": "find the gap",
       "goes": "Pain · Listen for: Competition",
-      "draft": [
-        "goes"
-      ],
       "alts": [
         {
           "source": "Quick catch (Say It Out Loud)",
@@ -1751,9 +1681,6 @@
       "contSource": "When They Say No · type 2",
       "then": "learn why or exit clean",
       "goes": "Pain · Listen for: Competition",
-      "draft": [
-        "goes"
-      ],
       "seeAlso": "no-2",
       "industries": []
     },
@@ -1767,9 +1694,6 @@
       "contSource": "Meeting Ask Library · Soft",
       "then": "low pressure meeting",
       "goes": "Pain",
-      "draft": [
-        "goes"
-      ],
       "industries": []
     },
     {
@@ -1780,9 +1704,6 @@
       "explore": "Should I try later today, or is tomorrow morning better?",
       "then": "get a callback window",
       "goes": "Listen for: timing",
-      "draft": [
-        "goes"
-      ],
       "seeAlso": "no-1",
       "industries": [],
       "noContinue": "Old card had no spoken continue line; the \"then\" note is the next step."
@@ -1795,9 +1716,6 @@
       "explore": "Roughly how many users or devices would this apply to?",
       "then": "qualify, then book",
       "goes": "Metrics",
-      "draft": [
-        "goes"
-      ],
       "industries": [],
       "noContinue": "Old card had no spoken continue line; the \"then\" note is the next step."
     },
@@ -1813,9 +1731,6 @@
       "cont": "Would it be weird if I mentioned you pointed me the right way?",
       "contSource": "What Did They Say · Wrong person",
       "goes": "Champion · Listen for: Economic Buyer",
-      "draft": [
-        "goes"
-      ],
       "alts": [
         {
           "source": "Consult offer",
@@ -1853,9 +1768,6 @@
       "cont": "So — worth 15 minutes next week?",
       "then": "then → \"So — worth 15 minutes next week?\"",
       "goes": "Champion",
-      "draft": [
-        "goes"
-      ],
       "industries": []
     },
     {
@@ -1871,9 +1783,6 @@
       "cont": "That fair?",
       "then": "then → \"That fair?\"",
       "goes": "Pain",
-      "draft": [
-        "goes"
-      ],
       "industries": []
     },
     {
@@ -1888,9 +1797,6 @@
       "explore": "That's why I kept it to 15 minutes, not an hour. If it's not useful in the first five, you can kick me off the call. When's usually calmer for you, mornings or later in the week?",
       "then": "then → get a specific window",
       "goes": "Listen for: timing",
-      "draft": [
-        "goes"
-      ],
       "industries": [],
       "noContinue": "Old card had no spoken continue line; the \"then\" note is the next step."
     },
@@ -1906,9 +1812,6 @@
       "explore": "It's just a snapshot of where you're strong and where there might be some easy wins. No pressure to do a thing with it. Worth a look while it's free?",
       "then": "then → if still no, get a follow-up date",
       "goes": "Pain",
-      "draft": [
-        "goes"
-      ],
       "industries": [],
       "noContinue": "Old card had no spoken continue line; the \"then\" note is the next step."
     },
@@ -1925,9 +1828,6 @@
       "cont": "That's why I figured the 15 minutes was worth it.",
       "then": "then → back to the ask: \"That's why I figured the 15 minutes was worth it.\"",
       "goes": "Pain",
-      "draft": [
-        "goes"
-      ],
       "industries": []
     }
   ],
@@ -1974,13 +1874,6 @@
     ]
   },
   "secure": {
-    "draft": [
-      "signals.title",
-      "signals.t",
-      "tiers.head",
-      "tiers.verb",
-      "tiers (which asks/closes go in which tier)"
-    ],
     "signals": [
       {
         "title": "They named it",
@@ -2008,8 +1901,7 @@
     ],
     "threshold": {
       "title": "Two of three, and you ask",
-      "t": "Don't stretch the call to finish a checklist. Ask for the 10-15 minutes.",
-      "status": "DRAFT: review"
+      "t": "Don't stretch the call to finish a checklist. Ask for the 10-15 minutes."
     },
     "tiers": [
       {
@@ -2066,60 +1958,42 @@
         "label": "Default",
         "line": "\"Would 10-15 minutes to compare notes be unreasonable?\"",
         "default": true,
-        "tier": 3,
-        "draft": [
-          "tier"
-        ]
+        "tier": 3
       },
       {
         "id": "direct",
         "label": "Direct",
         "line": "\"Worth taking a quick look together next week?\"",
         "default": false,
-        "tier": 3,
-        "draft": [
-          "tier"
-        ]
+        "tier": 3
       },
       {
         "id": "curious",
         "label": "Curious",
         "line": "\"I'm not sure we're a fit yet. Would it make sense to compare notes?\"",
         "default": false,
-        "tier": 2,
-        "draft": [
-          "tier"
-        ]
+        "tier": 2
       },
       {
         "id": "executive",
         "label": "Executive",
         "line": "\"If there's a chance to save the team time, it's probably worth a short conversation.\"",
         "default": false,
-        "tier": 2,
-        "draft": [
-          "tier"
-        ]
+        "tier": 2
       },
       {
         "id": "soft",
         "label": "Soft",
         "line": "\"No hard pitch. Just 10 minutes to see if there's anything useful.\"",
         "default": false,
-        "tier": 1,
-        "draft": [
-          "tier"
-        ]
+        "tier": 1
       },
       {
         "id": "calendar-lock",
         "label": "Calendar lock",
         "line": "\"Perfect. Are mornings or afternoons usually easier for you?\"",
         "default": false,
-        "tier": 3,
-        "draft": [
-          "tier"
-        ]
+        "tier": 3
       }
     ],
     "closes": [
@@ -2130,28 +2004,19 @@
         "notes": [
           "If yes: \"Perfect. Are mornings or afternoons easier?\""
         ],
-        "tier": 3,
-        "draft": [
-          "tier"
-        ]
+        "tier": 3
       },
       {
         "id": "curious",
         "label": "Curiosity",
         "line": "\"I'm not even sure MaaS360 is a fit yet. That's why I think a quick conversation would be useful. We compare what you do today against where we usually help. If it's not relevant, you tell me. Unreasonable?\"",
-        "tier": 2,
-        "draft": [
-          "tier"
-        ]
+        "tier": 2
       },
       {
         "id": "exec",
         "label": "Executive",
         "line": "\"This may not turn into a project. But if there's a chance to reduce risk or take manual work off IT, it's probably worth a short look. Would 15 minutes next week be fair?\"",
-        "tier": 2,
-        "draft": [
-          "tier"
-        ]
+        "tier": 2
       },
       {
         "id": "soft",
@@ -2160,19 +2025,13 @@
         "notes": [
           "Then set a specific follow-up date, not \"sometime later.\""
         ],
-        "tier": 1,
-        "draft": [
-          "tier"
-        ]
+        "tier": 1
       },
       {
         "id": "lock",
         "label": "Calendar Lock",
         "line": "\"Perfect. I've got Tuesday at 2. What's the best email for the invite?\"\n\nAfter they answer: \"Great, I'm sending it while we're on the phone so I don't lose you.\"\n\nThen: \"Anyone else who should be included if we're talking device management or security?\"",
-        "tier": 3,
-        "draft": [
-          "tier"
-        ]
+        "tier": 3
       }
     ],
     "lockIt": {
@@ -2211,8 +2070,7 @@
     },
     "ai": {
       "text": "Draft the follow-up while it is fresh.",
-      "prompt": "Draft a short follow-up email to a {role} at {company} about IBM MaaS360 using my call notes: [their words], [any number], [names], [what they use today]. End with one specific time for a 15-minute call.",
-      "status": "DRAFT: review"
+      "prompt": "Draft a short follow-up email to a {role} at {company} about IBM MaaS360 using my call notes: [their words], [any number], [names], [what they use today]. End with one specific time for a 15-minute call."
     }
   },
   "voicemail": {
@@ -2266,7 +2124,7 @@
       "stat": "**45 min → 5** per device",
       "line": "\"We've seen new-device setup drop from about 45 minutes to 5, and claw back ~50 IT hours a month.\"",
       "src": "your ADG / Vegas briefs",
-      "todo": "TODO: verify approved for external use (sourced from an internal / customer brief)"
+      "approved": "Approved for external use by evanji, 2026-10-05"
     },
     {
       "id": "tickets-60",
@@ -2274,7 +2132,7 @@
       "stat": "**~60%** fewer tickets",
       "line": "\"Teams have seen roughly 60% fewer device tickets, up to 70% by day 90.\" Use when they gripe about support load.",
       "src": "your Hacienda brief",
-      "todo": "TODO: verify approved for external use (sourced from an internal / customer brief)"
+      "approved": "Approved for external use by evanji, 2026-10-05"
     },
     {
       "id": "cost-36k",
@@ -2282,7 +2140,7 @@
       "stat": "**~$36K/yr** saved",
       "line": "\"On ~100 devices, just 30 min saved per user a month is about $36K a year in IT time.\" Lead with this for a budget owner.",
       "src": "your ADG model",
-      "todo": "TODO: verify approved for external use (sourced from an internal / customer brief)"
+      "approved": "Approved for external use by evanji, 2026-10-05"
     },
     {
       "id": "scale-175m",

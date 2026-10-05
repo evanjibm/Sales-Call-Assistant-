@@ -60,7 +60,7 @@ for (const s of D.industries) {
     for (const k of ['line', 'disc', 'curi', 'ask', 'spoken', 'spDisc', 'spCuri', 'spAsk', 'stat']) if (!sc[k]) err(`industries[${s.id}].scripts.${set}.${k} missing`);
   }
   if (!s.email) err(`industries[${s.id}].email missing`);
-  if (!s.fits || !s.fits.todo) err(`industries[${s.id}].fits must carry a TODO until the named accounts are cleared`);
+  if (!s.fits || !(s.fits.todo || s.fits.approved)) err(`industries[${s.id}].fits must carry a TODO until the named accounts are cleared, then an approved note`);
 }
 
 // ---- personas ----
@@ -80,7 +80,7 @@ for (const o of D.objections) {
 const PROOF_IDS = ids(D.proof);
 for (const p of D.proof) {
   if (!p.src) err(`proof[${p.id}] has no source`);
-  if (/ADG|Vegas|Hacienda/i.test(p.src) && !/TODO: verify approved for external use/.test(p.todo || '')) err(`proof[${p.id}] is brief-sourced and must be marked TODO`);
+  if (/ADG|Vegas|Hacienda/i.test(p.src) && !/TODO: verify approved for external use/.test(p.todo || '') && !p.approved) err(`proof[${p.id}] is brief-sourced and must be marked TODO or approved`);
 }
 (function refs(v, p) {
   if (Array.isArray(v)) return v.forEach((x, i) => refs(x, `${p}[${x && x.id ? x.id : i}]`));
@@ -127,5 +127,6 @@ if (!quiet) {
   console.log(`\nDRAFT: review (${drafts.length})`); drafts.forEach((t) => console.log('  - ' + t));
   console.log('');
 }
+if (D.meta.reviewed && (drafts.length || todos.length)) err('meta.reviewed is true but DRAFT/TODO markers remain');
 if (errors.length) { console.error(`check: ${errors.length} error(s)`); errors.forEach((e) => console.error('  x ' + e)); process.exit(1); }
 console.log(`check: OK · ${D.openers.length} openers (${visible.length} visible) · ${D.industries.length} sectors · ${D.personas.length} personas · ${D.objections.length} objections · ${D.proof.length} proof points · ${drafts.length} DRAFT · ${todos.length} TODO`);
