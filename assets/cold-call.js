@@ -182,6 +182,7 @@
         '<p class="value-line copyable">' + q(D.value) + '</p>' +
         (variant ? '<p class="note"><b>For ' + esc(per.role) + ' (' + esc(variant.label) + '):</b> ' + md(variant.line) + '</p>' : '') +
         '<span class="hint">' + md(D.valueHint) + '</span></div>' +
+      tailoredPanel(op, sec, per) +
       '<div class="callout full-guide"><p>' + md(D.openerGuide.intro) + '</p><p class="hint">' + md(D.openerGuide.hint) + '</p></div>' +
       '<div class="tabs" role="tablist" aria-label="Opener style">' + visibleOpeners().map(function (o) {
         return '<button class="tab' + (o.id === op.id ? ' active' : '') + '" type="button" data-opener="' + o.id + '">' + esc(o.tag) + '</button>';
@@ -222,6 +223,23 @@
       '<div class="two-col full-guide">' + D.valueVariants.map(function (v) { return '<div class="card"><h4>' + esc(v.label) + '</h4><p class="copyable">' + md(v.line) + '</p></div>'; }).join('') + '</div>';
     $('#s-engage').innerHTML = html;
     $('#railOpener').textContent = op.tag;
+  }
+
+  // what the sector + persona pills change, shown right under the value line for every opener
+  function tailoredPanel(op, sec, per) {
+    var tab = per.openingTab ? byId(D.openingScripts.tabs, per.openingTab) : null;
+    var proofSet = byId(D.openers, 'proofdefault');
+    return '<div class="tailored" data-tailored>' +
+      '<div class="tailored-h">Tailored for this call · <b>' + esc(sec.label) + '</b> · <b>' + esc(per.role) + '</b></div>' +
+      '<div class="tailored-grid">' +
+        '<div><div class="lbl">' + esc(sec.hookLabel) + ' · researched angle</div><p class="say copyable">' + md(sec.hook) + '</p>' +
+          '<span class="nums">' + md(sec.nums) + '</span>' + proofTodo(sec.proofRefs) + '</div>' +
+        '<div><div class="lbl">' + esc(per.role) + ' · ' + (tab ? 'opening line' : 'pain to test') + '</div>' +
+          (tab ? say(tab.line) + (tab.notes ? '<p class="note">' + md(tab.notes[0]) + '</p>' : '')
+               : '<p class="say">' + md(per.hypothesis) + '</p>') + '</div>' +
+      '</div>' +
+      (op.sectorSet ? '' : '<p class="note">The <b>' + esc(op.tag) + '</b> opener reads the same in every sector. <button type="button" class="link-btn" data-opener="' + proofSet.id + '">Switch to ' + esc(proofSet.tag) + '</button> for the sector version of the script.</p>') +
+    '</div>';
   }
 
   function renderDiscover() {
@@ -422,6 +440,12 @@
   }
 
   // ---------- interactions ----------
+  function flashTailored(msg) {
+    toast(msg);
+    $$('[data-tailored], #s-engage .script, .persona-hyp').forEach(function (el) {
+      el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+    });
+  }
   function setLive(on) {
     document.body.classList.toggle('live', on);
     $('#liveBtn').setAttribute('aria-pressed', on);
@@ -439,8 +463,8 @@
     document.addEventListener('click', function (e) {
       var t = e.target.closest('[data-sector],[data-persona],[data-opener],[data-trigger],[data-tab],.obj-head,.copy');
       if (!t) return;
-      if (t.hasAttribute('data-sector')) { state.sector = t.getAttribute('data-sector'); save('sector', state.sector); renderAll(); }
-      else if (t.hasAttribute('data-persona')) { state.persona = t.getAttribute('data-persona'); save('persona', state.persona); renderAll(); }
+      if (t.hasAttribute('data-sector')) { state.sector = t.getAttribute('data-sector'); save('sector', state.sector); renderAll(); flashTailored('Scripts updated for ' + sector().label); }
+      else if (t.hasAttribute('data-persona')) { state.persona = t.getAttribute('data-persona'); save('persona', state.persona); renderAll(); flashTailored('Scripts updated for ' + persona().role); }
       else if (t.hasAttribute('data-opener')) { state.opener = t.getAttribute('data-opener'); save('opener', state.opener); renderAll(); }
       else if (t.hasAttribute('data-trigger')) { var v = t.getAttribute('data-trigger'); state.trigger = state.trigger === v ? null : v; save('trigger', state.trigger); renderAll(); }
       else if (t.hasAttribute('data-tab')) {
