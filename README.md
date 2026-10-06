@@ -1,28 +1,30 @@
 # MaaS360 Sales Guide · Cold Call Cockpit
 
-The Cold Call page redesigned on the Select T cockpit layout (Prep → Engage → Discover → Explore → Secure → Voicemail, Live Mode), with every line of content coming from `data/coldcall-maas360.json`.
+The MaaS360 Cold Call page, built directly on the Select T (watsonx Orchestrate) cold call cockpit page, so it has the same layout and design. Live: https://evanjibm.github.io/Sales-Call-Assistant-/
 
-## Run it
-
-```bash
-npm start
-```
-
-Then open http://localhost:8000/cold-call.html. Any static server works. Opening the HTML file directly (`file://`) won't work, because browsers block `fetch()` of the data file there.
-
-## Check it
-
-```bash
-npm run check
-```
-
-- `tools/check-coldcall.mjs`: validates the data (openers, sectors, objection format, proof sources, TODO marks, no hardcoded rep name) and prints every **DRAFT** and **TODO** item.
-- `tools/check-coverage.mjs`: proves every sentence of the old cockpit is still in the data file, verbatim. It needs `reference/maas360-old-cockpit.html`, which is gitignored, and skips if that's absent.
-
-## Files
+## How it fits together
 
 | Path | What it is |
 |---|---|
+| `cold-call.html` | The Select T cockpit page, adapted for MaaS360 by `tools/adapt-select-t.py` (generated; don't hand-edit) |
+| `data/coldcall-maas360.json` | **All MaaS360 content.** Edit this. |
+| `data/maas360-product.js` | Generated from the JSON: the MaaS360 entry in the Select T product format, plus the full data |
+| `assets/maas360-extras.js` / `.css` | Adds the MaaS360 content the Select T format has no field for (opener styles, What Did They Say, When They Say No, asks, emails, voicemails, cadence, coaching) into the same sections |
+| `tools/` | Build, adapt, and check scripts |
+| `reference/` | Gitignored. The Select T page from the repo owner and the old MaaS360 cockpit |
+
+## Common tasks
+
+```bash
+npm start          # serve locally, then open http://localhost:8000/cold-call.html
+npm run build      # after editing data/coldcall-maas360.json
+npm run check      # validate data, confirm every old sentence is present, confirm the build is current
+npm run adapt      # after getting a newer Select T page: save it as reference/orchestrate-only.html first
+```
+
+Pushing to `main` updates the GitHub Pages site within a minute or two.
+
+---|---|
 | `cold-call.html` | Page shell: shared nav, setup panel, empty section containers |
 | `assets/cold-call.js` | Renders everything from the data file; selectors, Live Mode (`L`), copy-on-double-click |
 | `assets/cold-call.css` | Cockpit styles, built on the carbon.css tokens |

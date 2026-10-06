@@ -1,0 +1,22 @@
+/* MaaS360 extras: small additions on top of the Select T page styles (same tokens). */
+.mx-beat{flex:1; min-width:0;}
+.mx-lbl{display:block; font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--text-mute); margin-bottom:4px;}
+.branch{display:block; margin-top:6px; font-size:.85em; color:var(--text-dim);}
+.cue{white-space:normal;}
+.mx-sector{padding:10px 20px; font-size:13.5px; color:var(--text-dim); background:var(--acc-bg); border-bottom:1px solid var(--line);}
+.mx-sector b{color:var(--acc-fg);}
+.mx-short{border-top:1px solid var(--line);}
+.mx-short summary{cursor:pointer; padding:9px 20px; font-size:12.5px; font-weight:600; color:var(--link);}
+.mx-short ol{margin:0; padding:0 20px 12px 40px; font-size:14px; color:var(--text-dim);}
+.mx-short li{margin-bottom:6px;}
+.mx-short li b{color:var(--text);}
+.mx-notes{font-size:13px;}
+.mx-ask{padding-top:10px; margin-top:10px; border-top:1px solid var(--line);}
+.mx-ask:first-of-type{border-top:0; margin-top:0; padding-top:0;}
+.mx-offer{background:var(--acc-bg); padding:10px 12px; border-top:0;}
+.mx-email{font-size:14px; line-height:1.6; background:var(--panel-2); padding:12px 14px; border-left:3px solid var(--primary);}
+.mx-alt{font-size:15px;}
+.mx-formula{margin-top:14px;}
+.mx-consult-note{margin:-4px 0 10px;}
+#mxLibrary .card.mx-match{border-color:var(--primary); box-shadow:inset 3px 0 0 var(--primary);}
+.obj.mx-resp{border-left-color:var(--primary);}
